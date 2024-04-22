@@ -30,6 +30,7 @@
             // 
             // btnListaArticulos
             // 
+            this.btnListaArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnListaArticulos.Location = new System.Drawing.Point(302, 303);
             this.btnListaArticulos.Name = "btnListaArticulos";
             this.btnListaArticulos.Size = new System.Drawing.Size(197, 49);
@@ -39,6 +40,7 @@
             // 
             // btnAgregarArticulo
             // 
+            this.btnAgregarArticulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAgregarArticulo.Location = new System.Drawing.Point(302, 228);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(197, 49);
@@ -48,6 +50,7 @@
             // 
             // lblTituloInicio
             // 
+            this.lblTituloInicio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTituloInicio.AutoSize = true;
             this.lblTituloInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloInicio.Location = new System.Drawing.Point(331, 99);
@@ -64,7 +67,9 @@
             this.Controls.Add(this.btnListaArticulos);
             this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.lblTituloInicio);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "ArticuloAjustes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ArticuloAjustes";
             this.ResumeLayout(false);
             this.PerformLayout();

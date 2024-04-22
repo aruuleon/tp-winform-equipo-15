@@ -30,6 +30,7 @@
             // 
             // btnListaMarcas
             // 
+            this.btnListaMarcas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnListaMarcas.Location = new System.Drawing.Point(302, 303);
             this.btnListaMarcas.Name = "btnListaMarcas";
             this.btnListaMarcas.Size = new System.Drawing.Size(197, 49);
@@ -39,6 +40,7 @@
             // 
             // btnAgregarMarca
             // 
+            this.btnAgregarMarca.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAgregarMarca.Location = new System.Drawing.Point(302, 228);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
             this.btnAgregarMarca.Size = new System.Drawing.Size(197, 49);
@@ -48,6 +50,7 @@
             // 
             // lblTituloInicio
             // 
+            this.lblTituloInicio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTituloInicio.AutoSize = true;
             this.lblTituloInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloInicio.Location = new System.Drawing.Point(355, 99);
@@ -64,7 +67,9 @@
             this.Controls.Add(this.btnListaMarcas);
             this.Controls.Add(this.btnAgregarMarca);
             this.Controls.Add(this.lblTituloInicio);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "MarcaAjustes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarcaAjustes";
             this.ResumeLayout(false);
             this.PerformLayout();

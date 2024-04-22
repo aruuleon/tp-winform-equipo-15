@@ -31,6 +31,7 @@
             // 
             // btnIncioArticulos
             // 
+            this.btnIncioArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIncioArticulos.Location = new System.Drawing.Point(281, 242);
             this.btnIncioArticulos.Name = "btnIncioArticulos";
             this.btnIncioArticulos.Size = new System.Drawing.Size(245, 103);
@@ -40,6 +41,7 @@
             // 
             // btnIncioMarcas
             // 
+            this.btnIncioMarcas.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnIncioMarcas.Location = new System.Drawing.Point(26, 242);
             this.btnIncioMarcas.Name = "btnIncioMarcas";
             this.btnIncioMarcas.Size = new System.Drawing.Size(197, 103);
@@ -49,6 +51,7 @@
             // 
             // btnCategorias
             // 
+            this.btnCategorias.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnCategorias.Location = new System.Drawing.Point(587, 242);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Size = new System.Drawing.Size(201, 103);
@@ -58,6 +61,7 @@
             // 
             // lblTituloInicio
             // 
+            this.lblTituloInicio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTituloInicio.AutoSize = true;
             this.lblTituloInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloInicio.Location = new System.Drawing.Point(290, 73);
@@ -77,6 +81,7 @@
             this.Controls.Add(this.btnIncioArticulos);
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.ResumeLayout(false);
             this.PerformLayout();

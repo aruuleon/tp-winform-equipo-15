@@ -30,6 +30,7 @@
             // 
             // btnListaCategorias
             // 
+            this.btnListaCategorias.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnListaCategorias.Location = new System.Drawing.Point(302, 303);
             this.btnListaCategorias.Name = "btnListaCategorias";
             this.btnListaCategorias.Size = new System.Drawing.Size(197, 49);
@@ -39,6 +40,7 @@
             // 
             // btnAgregarCategoria
             // 
+            this.btnAgregarCategoria.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAgregarCategoria.Location = new System.Drawing.Point(302, 228);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
             this.btnAgregarCategoria.Size = new System.Drawing.Size(197, 49);
@@ -48,6 +50,7 @@
             // 
             // lblTituloInicio
             // 
+            this.lblTituloInicio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTituloInicio.AutoSize = true;
             this.lblTituloInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloInicio.Location = new System.Drawing.Point(331, 99);
@@ -64,7 +67,9 @@
             this.Controls.Add(this.btnListaCategorias);
             this.Controls.Add(this.btnAgregarCategoria);
             this.Controls.Add(this.lblTituloInicio);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "CategoriaAjustes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CategoriaAjustes";
             this.ResumeLayout(false);
             this.PerformLayout();
