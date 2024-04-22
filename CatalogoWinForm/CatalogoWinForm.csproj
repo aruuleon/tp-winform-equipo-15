@@ -53,9 +53,27 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaCategorias.Designer.cs">
+      <DependentUpon>ListaCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaMarcas.Designer.cs">
+      <DependentUpon>ListaMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Marca.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ListaCategorias.resx">
+      <DependentUpon>ListaCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaMarcas.resx">
+      <DependentUpon>ListaMarcas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
