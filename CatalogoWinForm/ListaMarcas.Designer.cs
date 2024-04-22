@@ -39,6 +39,9 @@
             // 
             // dgvListaMarcas
             // 
+            this.dgvListaMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaMarcas.Location = new System.Drawing.Point(108, 128);
             this.dgvListaMarcas.Name = "dgvListaMarcas";
@@ -47,6 +50,7 @@
             // 
             // btnModificarMarcas
             // 
+            this.btnModificarMarcas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnModificarMarcas.Location = new System.Drawing.Point(108, 359);
             this.btnModificarMarcas.Name = "btnModificarMarcas";
             this.btnModificarMarcas.Size = new System.Drawing.Size(174, 45);
@@ -56,6 +60,7 @@
             // 
             // btnEliminarMarca
             // 
+            this.btnEliminarMarca.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEliminarMarca.Location = new System.Drawing.Point(545, 359);
             this.btnEliminarMarca.Name = "btnEliminarMarca";
             this.btnEliminarMarca.Size = new System.Drawing.Size(165, 45);
@@ -65,6 +70,7 @@
             // 
             // lblTituloMarcas
             // 
+            this.lblTituloMarcas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTituloMarcas.AutoSize = true;
             this.lblTituloMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloMarcas.Location = new System.Drawing.Point(351, 44);
@@ -76,6 +82,7 @@
             // 
             // tbBuscarMarcas
             // 
+            this.tbBuscarMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbBuscarMarcas.Location = new System.Drawing.Point(472, 102);
             this.tbBuscarMarcas.Name = "tbBuscarMarcas";
             this.tbBuscarMarcas.Size = new System.Drawing.Size(166, 20);
@@ -83,6 +90,7 @@
             // 
             // btnBuscarMarcas
             // 
+            this.btnBuscarMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscarMarcas.Location = new System.Drawing.Point(644, 97);
             this.btnBuscarMarcas.Name = "btnBuscarMarcas";
             this.btnBuscarMarcas.Size = new System.Drawing.Size(66, 28);
@@ -102,7 +110,9 @@
             this.Controls.Add(this.btnEliminarMarca);
             this.Controls.Add(this.btnModificarMarcas);
             this.Controls.Add(this.dgvListaMarcas);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "ListaMarcas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Marcas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarcas)).EndInit();
             this.ResumeLayout(false);

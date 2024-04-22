@@ -36,90 +36,107 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
+            this.lblTituloArticulos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // cboMarca
             // 
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(52, 99);
+            this.cboMarca.Location = new System.Drawing.Point(99, 94);
+            this.cboMarca.Margin = new System.Windows.Forms.Padding(2);
             this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(121, 24);
+            this.cboMarca.Size = new System.Drawing.Size(104, 21);
             this.cboMarca.TabIndex = 11;
             this.cboMarca.Text = "Filtro por Marca..";
             // 
             // cboCategoria
             // 
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(189, 99);
+            this.cboCategoria.Location = new System.Drawing.Point(224, 94);
+            this.cboCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(121, 24);
+            this.cboCategoria.Size = new System.Drawing.Size(114, 21);
             this.cboCategoria.TabIndex = 12;
             this.cboCategoria.Text = "Filtro por Categoria";
             // 
             // txbBuscar
             // 
-            this.txbBuscar.Location = new System.Drawing.Point(376, 99);
-            this.txbBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txbBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbBuscar.Location = new System.Drawing.Point(432, 96);
             this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(250, 22);
+            this.txbBuscar.Size = new System.Drawing.Size(188, 20);
             this.txbBuscar.TabIndex = 13;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(649, 96);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.Location = new System.Drawing.Point(626, 94);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // dgvListaArticulos
             // 
+            this.dgvListaArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaArticulos.Location = new System.Drawing.Point(52, 133);
-            this.dgvListaArticulos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvListaArticulos.Location = new System.Drawing.Point(99, 122);
             this.dgvListaArticulos.Name = "dgvListaArticulos";
             this.dgvListaArticulos.RowHeadersWidth = 51;
-            this.dgvListaArticulos.Size = new System.Drawing.Size(697, 185);
+            this.dgvListaArticulos.Size = new System.Drawing.Size(602, 253);
             this.dgvListaArticulos.TabIndex = 15;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(52, 346);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnModificar.Location = new System.Drawing.Point(99, 381);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(176, 46);
+            this.btnModificar.Size = new System.Drawing.Size(132, 37);
             this.btnModificar.TabIndex = 16;
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(312, 346);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnEliminar.Location = new System.Drawing.Point(342, 381);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(176, 46);
+            this.btnEliminar.Size = new System.Drawing.Size(132, 37);
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(573, 346);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDetalle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDetalle.Location = new System.Drawing.Point(569, 381);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(176, 46);
+            this.btnDetalle.Size = new System.Drawing.Size(132, 37);
             this.btnDetalle.TabIndex = 18;
             this.btnDetalle.Text = "VER DETALLE";
             this.btnDetalle.UseVisualStyleBackColor = true;
             // 
+            // lblTituloArticulos
+            // 
+            this.lblTituloArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTituloArticulos.AutoSize = true;
+            this.lblTituloArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloArticulos.Location = new System.Drawing.Point(327, 17);
+            this.lblTituloArticulos.Name = "lblTituloArticulos";
+            this.lblTituloArticulos.Size = new System.Drawing.Size(131, 25);
+            this.lblTituloArticulos.TabIndex = 19;
+            this.lblTituloArticulos.Text = "ARTICULOS";
+            // 
             // frmListaArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTituloArticulos);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -128,8 +145,11 @@
             this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.cboMarca);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "frmListaArticulo";
-            this.Text = "ListaArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lista de Articulos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,5 +166,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.Label lblTituloArticulos;
     }
 }

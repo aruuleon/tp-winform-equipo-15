@@ -39,6 +39,7 @@
             // 
             // btnBuscarCategorias
             // 
+            this.btnBuscarCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscarCategorias.Location = new System.Drawing.Point(635, 98);
             this.btnBuscarCategorias.Name = "btnBuscarCategorias";
             this.btnBuscarCategorias.Size = new System.Drawing.Size(66, 28);
@@ -48,6 +49,7 @@
             // 
             // tbBuscarCategorias
             // 
+            this.tbBuscarCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbBuscarCategorias.Location = new System.Drawing.Point(463, 103);
             this.tbBuscarCategorias.Name = "tbBuscarCategorias";
             this.tbBuscarCategorias.Size = new System.Drawing.Size(166, 20);
@@ -55,6 +57,7 @@
             // 
             // lblTituloCategorias
             // 
+            this.lblTituloCategorias.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTituloCategorias.AutoSize = true;
             this.lblTituloCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloCategorias.Location = new System.Drawing.Point(342, 45);
@@ -66,6 +69,7 @@
             // 
             // btnEliminarCategorias
             // 
+            this.btnEliminarCategorias.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEliminarCategorias.Location = new System.Drawing.Point(536, 360);
             this.btnEliminarCategorias.Name = "btnEliminarCategorias";
             this.btnEliminarCategorias.Size = new System.Drawing.Size(165, 45);
@@ -75,6 +79,7 @@
             // 
             // btnModificarCategorias
             // 
+            this.btnModificarCategorias.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnModificarCategorias.Location = new System.Drawing.Point(99, 360);
             this.btnModificarCategorias.Name = "btnModificarCategorias";
             this.btnModificarCategorias.Size = new System.Drawing.Size(174, 45);
@@ -84,6 +89,9 @@
             // 
             // dgvListaCategorias
             // 
+            this.dgvListaCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaCategorias.Location = new System.Drawing.Point(99, 129);
             this.dgvListaCategorias.Name = "dgvListaCategorias";
@@ -101,7 +109,9 @@
             this.Controls.Add(this.btnEliminarCategorias);
             this.Controls.Add(this.btnModificarCategorias);
             this.Controls.Add(this.dgvListaCategorias);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "ListaCategorias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Categorias";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).EndInit();
             this.ResumeLayout(false);
