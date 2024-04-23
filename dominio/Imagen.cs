@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CatalogoWinForm
+namespace dominio
 {
-    internal class Imagen
+    public class Imagen
     {
         public int ID { get; set; }
         public string ImagenUrl { get; set; }

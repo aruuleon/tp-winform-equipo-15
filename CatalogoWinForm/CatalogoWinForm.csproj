@@ -64,14 +64,12 @@
     <Compile Include="AgregarMarca.Designer.cs">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Articulo.cs" />
     <Compile Include="ArticuloAjustes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ArticuloAjustes.Designer.cs">
       <DependentUpon>ArticuloAjustes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Categoria.cs" />
     <Compile Include="CategoriaAjustes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,7 +88,6 @@
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Imagen.cs" />
     <Compile Include="ListaArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,7 +106,6 @@
     <Compile Include="ListaMarcas.Designer.cs">
       <DependentUpon>ListaMarcas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Marca.cs" />
     <Compile Include="MarcaAjustes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +216,16 @@
   <ItemGroup>
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dominio\dominio.csproj">
+      <Project>{f1422c6d-2215-4981-9fb6-6131edae784a}</Project>
+      <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocio\negocio.csproj">
+      <Project>{63bbc98a-9fa9-40b2-a999-752453fc0280}</Project>
+      <Name>negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
