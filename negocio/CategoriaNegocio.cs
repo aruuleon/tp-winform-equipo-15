@@ -41,9 +41,25 @@ namespace negocio
             {
                 accesoCategoria.cerrarConexion();
             }
-           
-            
+                     
+        }
+        public void agregar(Categoria nueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("INSERT INTO CATEGORIAS VALUES ('" + nueva.Descripcion + "')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+            finally 
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }

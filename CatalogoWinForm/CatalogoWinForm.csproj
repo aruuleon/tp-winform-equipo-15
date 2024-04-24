@@ -52,29 +52,17 @@
     <Compile Include="AgregarArticulo.Designer.cs">
       <DependentUpon>AgregarArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarCategoria.cs">
+    <Compile Include="AltaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarCategoria.Designer.cs">
-      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    <Compile Include="AltaCategoria.Designer.cs">
+      <DependentUpon>AltaCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="AgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AgregarMarca.Designer.cs">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ArticuloAjustes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ArticuloAjustes.Designer.cs">
-      <DependentUpon>ArticuloAjustes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CategoriaAjustes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CategoriaAjustes.Designer.cs">
-      <DependentUpon>CategoriaAjustes.cs</DependentUpon>
     </Compile>
     <Compile Include="DetallesArticulo.cs">
       <SubType>Form</SubType>
@@ -106,12 +94,6 @@
     <Compile Include="ListaMarcas.Designer.cs">
       <DependentUpon>ListaMarcas.cs</DependentUpon>
     </Compile>
-    <Compile Include="MarcaAjustes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MarcaAjustes.Designer.cs">
-      <DependentUpon>MarcaAjustes.cs</DependentUpon>
-    </Compile>
     <Compile Include="ModificarArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,17 +118,11 @@
     <EmbeddedResource Include="AgregarArticulo.resx">
       <DependentUpon>AgregarArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarCategoria.resx">
-      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="AltaCategoria.resx">
+      <DependentUpon>AltaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ArticuloAjustes.resx">
-      <DependentUpon>ArticuloAjustes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CategoriaAjustes.resx">
-      <DependentUpon>CategoriaAjustes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetallesArticulo.resx">
       <DependentUpon>DetallesArticulo.cs</DependentUpon>
@@ -162,9 +138,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaMarcas.resx">
       <DependentUpon>ListaMarcas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MarcaAjustes.resx">
-      <DependentUpon>MarcaAjustes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarArticulo.resx">
       <DependentUpon>ModificarArticulo.cs</DependentUpon>

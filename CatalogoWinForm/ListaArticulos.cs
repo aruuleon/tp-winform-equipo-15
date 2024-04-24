@@ -25,5 +25,10 @@ namespace CatalogoWinForm
              dgvListaArticulos.DataSource = listaArticulos;*/
             MessageBox.Show("AGREGAR CLASE articuloNegocio");
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

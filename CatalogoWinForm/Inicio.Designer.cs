@@ -38,6 +38,7 @@
             this.btnIncioArticulos.TabIndex = 15;
             this.btnIncioArticulos.Text = "ARTICULOS";
             this.btnIncioArticulos.UseVisualStyleBackColor = true;
+            this.btnIncioArticulos.Click += new System.EventHandler(this.btnIncioArticulos_Click);
             // 
             // btnIncioMarcas
             // 
@@ -48,6 +49,7 @@
             this.btnIncioMarcas.TabIndex = 16;
             this.btnIncioMarcas.Text = "MARCAS";
             this.btnIncioMarcas.UseVisualStyleBackColor = true;
+            this.btnIncioMarcas.Click += new System.EventHandler(this.btnIncioMarcas_Click);
             // 
             // btnCategorias
             // 
@@ -58,6 +60,7 @@
             this.btnCategorias.TabIndex = 17;
             this.btnCategorias.Text = "CATEGORIAS";
             this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // lblTituloInicio
             // 
@@ -83,6 +86,7 @@
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

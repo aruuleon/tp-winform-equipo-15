@@ -23,5 +23,16 @@ namespace CatalogoWinForm
             CategoriaNegocio catategoriaNeg = new CategoriaNegocio();
             dgvListaCategorias.DataSource = catategoriaNeg.listar();
         }
+
+        private void btnAgregarCategorias_Click(object sender, EventArgs e)
+        {
+            AltaCategoria altaCategoria = new AltaCategoria();
+            altaCategoria.ShowDialog();
+        }
+
+        private void btnVolverCat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
