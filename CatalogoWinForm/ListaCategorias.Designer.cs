@@ -88,6 +88,7 @@
             this.btnModificarCategorias.TabIndex = 7;
             this.btnModificarCategorias.Text = "MODIFICAR";
             this.btnModificarCategorias.UseVisualStyleBackColor = true;
+            this.btnModificarCategorias.Click += new System.EventHandler(this.btnModificarCategorias_Click);
             // 
             // dgvListaCategorias
             // 

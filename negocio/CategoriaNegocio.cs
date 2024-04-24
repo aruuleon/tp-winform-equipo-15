@@ -24,6 +24,8 @@ namespace negocio
                 {
                     Categoria aux = new Categoria();
                     aux.ID = (int)accesoCategoria.Lector["Id"];
+
+                    if(!(accesoCategoria.Lector["Descripcion"] is DBNull))
                     aux.Descripcion = (string)accesoCategoria.Lector["Descripcion"];
 
                     lista.Add(aux);
@@ -57,6 +59,24 @@ namespace negocio
                 throw ex;
             }
             finally 
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void modificar(Categoria nueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE CATEGORIAS SET Descripcion = '" + nueva.Descripcion + "' WHERE ID = " + nueva.ID );
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
             {
                 datos.cerrarConexion();
             }
