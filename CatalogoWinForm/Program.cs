@@ -13,7 +13,7 @@ namespace CatalogoWinForm {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListaArticulos());
+            Application.Run(new Inicio());
         }
     }
 }

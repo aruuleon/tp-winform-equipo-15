@@ -37,6 +37,7 @@
             this.btnListaCategorias.TabIndex = 24;
             this.btnListaCategorias.Text = "LISTA CATEGORIAS";
             this.btnListaCategorias.UseVisualStyleBackColor = true;
+            this.btnListaCategorias.Click += new System.EventHandler(this.btnListaCategorias_Click);
             // 
             // btnAgregarCategoria
             // 

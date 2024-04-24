@@ -92,6 +92,8 @@
             this.dgvListaCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListaCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListaCategorias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaCategorias.Location = new System.Drawing.Point(99, 129);
             this.dgvListaCategorias.Name = "dgvListaCategorias";
@@ -113,6 +115,7 @@
             this.Name = "ListaCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Categorias";
+            this.Load += new System.EventHandler(this.ListaCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
