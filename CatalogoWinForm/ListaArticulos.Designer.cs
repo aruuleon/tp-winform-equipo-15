@@ -1,7 +1,5 @@
-﻿namespace CatalogoWinForm
-{
-    partial class frmListaArticulo
-    {
+﻿namespace CatalogoWinForm {
+    partial class ListaArticulos {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,10 +9,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,17 +22,16 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.txbBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgvListaArticulos = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.lblTituloArticulos = new System.Windows.Forms.Label();
+            this.dgvListaArticulos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,18 +72,6 @@
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // dgvListaArticulos
-            // 
-            this.dgvListaArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaArticulos.Location = new System.Drawing.Point(99, 122);
-            this.dgvListaArticulos.Name = "dgvListaArticulos";
-            this.dgvListaArticulos.RowHeadersWidth = 51;
-            this.dgvListaArticulos.Size = new System.Drawing.Size(602, 253);
-            this.dgvListaArticulos.TabIndex = 15;
             // 
             // btnModificar
             // 
@@ -131,25 +114,34 @@
             this.lblTituloArticulos.TabIndex = 19;
             this.lblTituloArticulos.Text = "ARTICULOS";
             // 
-            // frmListaArticulo
+            // dgvListaArticulos
+            // 
+            this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaArticulos.Location = new System.Drawing.Point(99, 143);
+            this.dgvListaArticulos.Name = "dgvListaArticulos";
+            this.dgvListaArticulos.Size = new System.Drawing.Size(602, 215);
+            this.dgvListaArticulos.TabIndex = 20;
+            // 
+            // ListaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvListaArticulos);
             this.Controls.Add(this.lblTituloArticulos);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.dgvListaArticulos);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.cboMarca);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(816, 489);
-            this.Name = "frmListaArticulo";
+            this.Name = "ListaArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Articulos";
+            this.Load += new System.EventHandler(this.ListaArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,10 +154,10 @@
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.TextBox txbBuscar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvListaArticulos;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label lblTituloArticulos;
+        private System.Windows.Forms.DataGridView dgvListaArticulos;
     }
 }
