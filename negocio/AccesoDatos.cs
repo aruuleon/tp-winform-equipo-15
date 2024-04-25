@@ -12,12 +12,16 @@ namespace negocio
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
+
+
+
         public SqlDataReader Lector { get; set; }
 
         public AccesoDatos()
         {
             conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
+
         }
         public void setearConsulta(string consulta)
         {
@@ -34,9 +38,10 @@ namespace negocio
                 lector = comando.ExecuteReader();
                 Lector = lector;
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                throw exception;
+
+                throw ex;
             }
         }
         public void ejecutarAccion()
@@ -55,10 +60,11 @@ namespace negocio
         }
         public void cerrarConexion()
         {
-            if (lector != null) {
+            if (lector != null) 
                 lector.Close();
-            }
             conexion.Close();
         }
+
+
     }
 }
