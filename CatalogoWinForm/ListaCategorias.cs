@@ -27,6 +27,7 @@ namespace CatalogoWinForm
             {          
                 listaCategoria = catategoriaNeg.listar();
                 dgvListaCategorias.DataSource = listaCategoria;
+                
             }
             catch (Exception)
             {
@@ -54,11 +55,22 @@ namespace CatalogoWinForm
 
         private void btnModificarCategorias_Click(object sender, EventArgs e)
         {
-            Categoria seleccionado;
-            seleccionado = (Categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
-            AltaCategoria ModCategoria = new AltaCategoria(seleccionado);
-            ModCategoria.ShowDialog();
-            Cargar();
+            try
+            {
+                Categoria seleccionado;
+
+                seleccionado = (Categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
+
+                AltaCategoria ModCategoria = new AltaCategoria(seleccionado);
+                ModCategoria.ShowDialog();
+                Cargar();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         private void btnEliminarCategorias_Click(object sender, EventArgs e)
@@ -125,14 +137,14 @@ namespace CatalogoWinForm
         }
 
 
-        private void btnBuscarCategorias_Click(object sender, EventArgs e)
+        private void tbBuscarCategorias_TextChanged(object sender, EventArgs e)
         {
             List<Categoria> listafiltrada;
             string filtro = tbBuscarCategorias.Text;
             if (filtro != "")
             {
-                listafiltrada = listaCategoria.FindAll(x => x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.ID == Int32.Parse(filtro)); ;
-                
+                listafiltrada = listaCategoria.FindAll(x => x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.ID.ToString() == filtro);
+
             }
             else
             {
@@ -141,6 +153,13 @@ namespace CatalogoWinForm
 
             dgvListaCategorias.DataSource = null;
             dgvListaCategorias.DataSource = listafiltrada;
+            btnModificarCategorias.Enabled = true;
+            btnEliminarCategorias.Enabled = true;
+            if (listafiltrada.Count <= 0)
+            {
+                btnModificarCategorias.Enabled = false;
+                btnEliminarCategorias.Enabled = false;
+            }
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBuscarCategorias = new System.Windows.Forms.Button();
             this.tbBuscarCategorias = new System.Windows.Forms.TextBox();
             this.lblTituloCategorias = new System.Windows.Forms.Label();
             this.btnEliminarCategorias = new System.Windows.Forms.Button();
@@ -39,24 +38,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnBuscarCategorias
-            // 
-            this.btnBuscarCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscarCategorias.Location = new System.Drawing.Point(635, 98);
-            this.btnBuscarCategorias.Name = "btnBuscarCategorias";
-            this.btnBuscarCategorias.Size = new System.Drawing.Size(66, 28);
-            this.btnBuscarCategorias.TabIndex = 11;
-            this.btnBuscarCategorias.Text = "BUSCAR";
-            this.btnBuscarCategorias.UseVisualStyleBackColor = true;
-            this.btnBuscarCategorias.Click += new System.EventHandler(this.btnBuscarCategorias_Click);
-            // 
             // tbBuscarCategorias
             // 
             this.tbBuscarCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbBuscarCategorias.Location = new System.Drawing.Point(463, 103);
             this.tbBuscarCategorias.Name = "tbBuscarCategorias";
-            this.tbBuscarCategorias.Size = new System.Drawing.Size(166, 20);
+            this.tbBuscarCategorias.Size = new System.Drawing.Size(238, 20);
             this.tbBuscarCategorias.TabIndex = 10;
+            this.tbBuscarCategorias.TextChanged += new System.EventHandler(this.tbBuscarCategorias_TextChanged);
             // 
             // lblTituloCategorias
             // 
@@ -135,7 +124,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnVolverCat);
             this.Controls.Add(this.btnAgregarCategorias);
-            this.Controls.Add(this.btnBuscarCategorias);
             this.Controls.Add(this.tbBuscarCategorias);
             this.Controls.Add(this.lblTituloCategorias);
             this.Controls.Add(this.btnEliminarCategorias);
@@ -154,8 +142,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnBuscarCategorias;
         private System.Windows.Forms.TextBox tbBuscarCategorias;
         private System.Windows.Forms.Label lblTituloCategorias;
         private System.Windows.Forms.Button btnEliminarCategorias;
