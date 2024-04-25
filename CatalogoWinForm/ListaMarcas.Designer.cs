@@ -34,6 +34,8 @@
             this.lblTituloMarcas = new System.Windows.Forms.Label();
             this.tbBuscarMarcas = new System.Windows.Forms.TextBox();
             this.btnBuscarMarcas = new System.Windows.Forms.Button();
+            this.btnAgregarMarcas = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarcas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +44,10 @@
             this.dgvListaMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListaMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvListaMarcas.Enabled = false;
             this.dgvListaMarcas.Location = new System.Drawing.Point(108, 128);
             this.dgvListaMarcas.Name = "dgvListaMarcas";
             this.dgvListaMarcas.Size = new System.Drawing.Size(602, 202);
@@ -51,7 +56,7 @@
             // btnModificarMarcas
             // 
             this.btnModificarMarcas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificarMarcas.Location = new System.Drawing.Point(108, 359);
+            this.btnModificarMarcas.Location = new System.Drawing.Point(334, 359);
             this.btnModificarMarcas.Name = "btnModificarMarcas";
             this.btnModificarMarcas.Size = new System.Drawing.Size(174, 45);
             this.btnModificarMarcas.TabIndex = 1;
@@ -98,12 +103,34 @@
             this.btnBuscarMarcas.Text = "BUSCAR";
             this.btnBuscarMarcas.UseVisualStyleBackColor = true;
             // 
+            // btnAgregarMarcas
+            // 
+            this.btnAgregarMarcas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAgregarMarcas.Location = new System.Drawing.Point(108, 359);
+            this.btnAgregarMarcas.Name = "btnAgregarMarcas";
+            this.btnAgregarMarcas.Size = new System.Drawing.Size(174, 45);
+            this.btnAgregarMarcas.TabIndex = 13;
+            this.btnAgregarMarcas.Text = "AGREGAR";
+            this.btnAgregarMarcas.UseVisualStyleBackColor = true;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(2, 1);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(69, 25);
+            this.btnVolver.TabIndex = 14;
+            this.btnVolver.Text = "<--";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolverCat_Click);
+            // 
             // ListaMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnAgregarMarcas);
             this.Controls.Add(this.btnBuscarMarcas);
             this.Controls.Add(this.tbBuscarMarcas);
             this.Controls.Add(this.lblTituloMarcas);
@@ -114,6 +141,7 @@
             this.Name = "ListaMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Marcas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,5 +156,7 @@
         private System.Windows.Forms.Label lblTituloMarcas;
         private System.Windows.Forms.TextBox tbBuscarMarcas;
         private System.Windows.Forms.Button btnBuscarMarcas;
+        private System.Windows.Forms.Button btnAgregarMarcas;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

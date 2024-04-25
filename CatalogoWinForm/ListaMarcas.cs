@@ -16,5 +16,10 @@ namespace CatalogoWinForm
         {
             InitializeComponent();
         }
+
+        private void btnVolverCat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

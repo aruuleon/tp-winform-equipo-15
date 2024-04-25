@@ -34,6 +34,8 @@
             this.btnEliminarCategorias = new System.Windows.Forms.Button();
             this.btnModificarCategorias = new System.Windows.Forms.Button();
             this.dgvListaCategorias = new System.Windows.Forms.DataGridView();
+            this.btnAgregarCategorias = new System.Windows.Forms.Button();
+            this.btnVolverCat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,29 +82,57 @@
             // btnModificarCategorias
             // 
             this.btnModificarCategorias.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificarCategorias.Location = new System.Drawing.Point(99, 360);
+            this.btnModificarCategorias.Location = new System.Drawing.Point(316, 360);
             this.btnModificarCategorias.Name = "btnModificarCategorias";
             this.btnModificarCategorias.Size = new System.Drawing.Size(174, 45);
             this.btnModificarCategorias.TabIndex = 7;
             this.btnModificarCategorias.Text = "MODIFICAR";
             this.btnModificarCategorias.UseVisualStyleBackColor = true;
+            this.btnModificarCategorias.Click += new System.EventHandler(this.btnModificarCategorias_Click);
             // 
             // dgvListaCategorias
             // 
             this.dgvListaCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListaCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaCategorias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaCategorias.Location = new System.Drawing.Point(99, 129);
+            this.dgvListaCategorias.MultiSelect = false;
             this.dgvListaCategorias.Name = "dgvListaCategorias";
+            this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaCategorias.Size = new System.Drawing.Size(602, 202);
             this.dgvListaCategorias.TabIndex = 6;
+            // 
+            // btnAgregarCategorias
+            // 
+            this.btnAgregarCategorias.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAgregarCategorias.Location = new System.Drawing.Point(99, 360);
+            this.btnAgregarCategorias.Name = "btnAgregarCategorias";
+            this.btnAgregarCategorias.Size = new System.Drawing.Size(174, 45);
+            this.btnAgregarCategorias.TabIndex = 12;
+            this.btnAgregarCategorias.Text = "AGREGAR";
+            this.btnAgregarCategorias.UseVisualStyleBackColor = true;
+            this.btnAgregarCategorias.Click += new System.EventHandler(this.btnAgregarCategorias_Click);
+            // 
+            // btnVolverCat
+            // 
+            this.btnVolverCat.Location = new System.Drawing.Point(3, 3);
+            this.btnVolverCat.Name = "btnVolverCat";
+            this.btnVolverCat.Size = new System.Drawing.Size(69, 25);
+            this.btnVolverCat.TabIndex = 13;
+            this.btnVolverCat.Text = "<--";
+            this.btnVolverCat.UseVisualStyleBackColor = true;
+            this.btnVolverCat.Click += new System.EventHandler(this.btnVolverCat_Click);
             // 
             // ListaCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolverCat);
+            this.Controls.Add(this.btnAgregarCategorias);
             this.Controls.Add(this.btnBuscarCategorias);
             this.Controls.Add(this.tbBuscarCategorias);
             this.Controls.Add(this.lblTituloCategorias);
@@ -113,6 +143,8 @@
             this.Name = "ListaCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Categorias";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ListaCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,5 +159,7 @@
         private System.Windows.Forms.Button btnEliminarCategorias;
         private System.Windows.Forms.Button btnModificarCategorias;
         private System.Windows.Forms.DataGridView dgvListaCategorias;
+        private System.Windows.Forms.Button btnAgregarCategorias;
+        private System.Windows.Forms.Button btnVolverCat;
     }
 }

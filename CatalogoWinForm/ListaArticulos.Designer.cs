@@ -32,6 +32,8 @@
             this.btnDetalle = new System.Windows.Forms.Button();
             this.lblTituloArticulos = new System.Windows.Forms.Label();
             this.dgvListaArticulos = new System.Windows.Forms.DataGridView();
+            this.btnAgregarArticulo = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificar.Location = new System.Drawing.Point(99, 381);
+            this.btnModificar.Location = new System.Drawing.Point(266, 381);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(132, 37);
             this.btnModificar.TabIndex = 16;
@@ -86,7 +88,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEliminar.Location = new System.Drawing.Point(342, 381);
+            this.btnEliminar.Location = new System.Drawing.Point(569, 381);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(132, 37);
             this.btnEliminar.TabIndex = 17;
@@ -96,7 +98,7 @@
             // btnDetalle
             // 
             this.btnDetalle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnDetalle.Location = new System.Drawing.Point(569, 381);
+            this.btnDetalle.Location = new System.Drawing.Point(419, 381);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(132, 37);
             this.btnDetalle.TabIndex = 18;
@@ -116,17 +118,46 @@
             // 
             // dgvListaArticulos
             // 
+            this.dgvListaArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListaArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaArticulos.Location = new System.Drawing.Point(99, 143);
+            this.dgvListaArticulos.MultiSelect = false;
             this.dgvListaArticulos.Name = "dgvListaArticulos";
+            this.dgvListaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaArticulos.Size = new System.Drawing.Size(602, 215);
             this.dgvListaArticulos.TabIndex = 20;
+            // 
+            // btnAgregarArticulo
+            // 
+            this.btnAgregarArticulo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(99, 381);
+            this.btnAgregarArticulo.Name = "btnAgregarArticulo";
+            this.btnAgregarArticulo.Size = new System.Drawing.Size(132, 37);
+            this.btnAgregarArticulo.TabIndex = 21;
+            this.btnAgregarArticulo.Text = "AGREGAR";
+            this.btnAgregarArticulo.UseVisualStyleBackColor = true;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(2, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(69, 25);
+            this.btnVolver.TabIndex = 22;
+            this.btnVolver.Text = "<--";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ListaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.dgvListaArticulos);
             this.Controls.Add(this.lblTituloArticulos);
             this.Controls.Add(this.btnDetalle);
@@ -141,6 +172,7 @@
             this.Name = "ListaArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Articulos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ListaArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).EndInit();
             this.ResumeLayout(false);
@@ -159,5 +191,7 @@
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label lblTituloArticulos;
         private System.Windows.Forms.DataGridView dgvListaArticulos;
+        private System.Windows.Forms.Button btnAgregarArticulo;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

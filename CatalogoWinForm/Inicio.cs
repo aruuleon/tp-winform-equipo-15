@@ -13,5 +13,23 @@ namespace CatalogoWinForm {
         public Inicio() {
             InitializeComponent();
         }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            ListaCategorias ventana = new ListaCategorias();
+            ventana.ShowDialog(); 
+        }
+
+        private void btnIncioMarcas_Click(object sender, EventArgs e)
+        {
+            ListaMarcas ventana = new ListaMarcas();            
+            ventana.ShowDialog(); 
+        }
+
+        private void btnIncioArticulos_Click(object sender, EventArgs e)
+        {          
+            ListaArticulos ventana = new ListaArticulos();            
+            ventana.ShowDialog(); 
+        }
     }
 }

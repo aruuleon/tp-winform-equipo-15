@@ -29,7 +29,7 @@ namespace negocio
         {
             comando.Connection = conexion;
             try
-            { 
+            {
                 conexion.Open();
                 lector = comando.ExecuteReader();
                 Lector = lector;
@@ -37,6 +37,20 @@ namespace negocio
             catch (Exception exception)
             {
                 throw exception;
+            }
+        }
+        public void ejecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
         public void cerrarConexion()

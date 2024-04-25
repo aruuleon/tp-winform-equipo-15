@@ -19,10 +19,16 @@ namespace CatalogoWinForm
             InitializeComponent();
         }
         private void ListaArticulos_Load(object sender, EventArgs e) {
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            /* ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
-            listaArticulos = articuloNegocio.listar();
-            dgvListaArticulos.DataSource = listaArticulos;
+             listaArticulos = articuloNegocio.listar();
+             dgvListaArticulos.DataSource = listaArticulos;*/
+            MessageBox.Show("AGREGAR CLASE articuloNegocio");
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
