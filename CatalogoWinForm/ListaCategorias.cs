@@ -58,5 +58,30 @@ namespace CatalogoWinForm
             ModCategoria.ShowDialog();
             Cargar();
         }
+
+        private void btnEliminarCategorias_Click(object sender, EventArgs e)
+        {
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            Categoria seleccionado;
+            
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Estas seguro de eliminarlo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
+                    categoriaNegocio.eliminar(seleccionado.ID);
+
+                    MessageBox.Show("Eliminado correctamente");
+                    Cargar();
+                }
+                
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ocurrio un error al eliminar los datos, comuniquese con el servicio tecnico");
+            }
+        }
     }
 }

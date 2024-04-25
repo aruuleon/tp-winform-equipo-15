@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -69,6 +70,24 @@ namespace negocio
             try
             {
                 datos.setearConsulta("UPDATE CATEGORIAS SET Descripcion = '" + nueva.Descripcion + "' WHERE ID = " + nueva.ID );
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE CATEGORIAS WHERE Id =" + id );
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
