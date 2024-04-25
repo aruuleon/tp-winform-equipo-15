@@ -7,13 +7,13 @@ using dominio;
 
 namespace negocio {
     public class ArticuloNegocio {
-        public List<Articulo> listar() {
+        public List <Articulo> listar() {
             List<Articulo> listaArticulos = new List<Articulo>();
             AccesoDatos accesoDatos = new AccesoDatos();
             try {
                 accesoDatos.setearConsulta("SELECT Codigo, Nombre, Descripcion FROM ARTICULOS");
                 accesoDatos.ejecutarLectura();
-                while (accesoDatos.Lector.Read()) {
+                while(accesoDatos.Lector.Read()) {
                     Articulo articulo = new Articulo();
                     articulo.Codigo = (string)accesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
