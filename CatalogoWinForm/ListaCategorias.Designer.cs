@@ -48,6 +48,7 @@
             this.btnBuscarCategorias.TabIndex = 11;
             this.btnBuscarCategorias.Text = "BUSCAR";
             this.btnBuscarCategorias.UseVisualStyleBackColor = true;
+            this.btnBuscarCategorias.Click += new System.EventHandler(this.btnBuscarCategorias_Click);
             // 
             // tbBuscarCategorias
             // 

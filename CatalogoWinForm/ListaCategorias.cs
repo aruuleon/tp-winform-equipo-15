@@ -14,6 +14,7 @@ namespace CatalogoWinForm
 {
     public partial class ListaCategorias : Form
     {
+        private List<Categoria> listaCategoria;
         public ListaCategorias()
         {
             InitializeComponent();
@@ -21,10 +22,11 @@ namespace CatalogoWinForm
 
         private void Cargar()
         {
+            CategoriaNegocio catategoriaNeg = new CategoriaNegocio();
             try
-            {
-                CategoriaNegocio catategoriaNeg = new CategoriaNegocio();
-                dgvListaCategorias.DataSource = catategoriaNeg.listar();
+            {          
+                listaCategoria = catategoriaNeg.listar();
+                dgvListaCategorias.DataSource = listaCategoria;
             }
             catch (Exception)
             {
@@ -70,10 +72,16 @@ namespace CatalogoWinForm
                 if (respuesta == DialogResult.Yes)
                 {
                     seleccionado = (Categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
-                    categoriaNegocio.eliminar(seleccionado.ID);
+                    if (!(ComprobarEliminacion(seleccionado.ID)))
+                    {
+                        categoriaNegocio.eliminar(seleccionado.ID);
+                        MessageBox.Show("Eliminado correctamente");
+                        Cargar();
+                    }
+                    else MessageBox.Show("La categoria que intenta eliminar esta en uso");
 
-                    MessageBox.Show("Eliminado correctamente");
-                    Cargar();
+
+
                 }
                 
             }
@@ -82,6 +90,57 @@ namespace CatalogoWinForm
 
                 MessageBox.Show("Ocurrio un error al eliminar los datos, comuniquese con el servicio tecnico");
             }
+        }
+
+        private bool ComprobarEliminacion(int id)
+        {
+            List<int> listaUsados = new List<int>();
+            AccesoDatos accesoDatos = new AccesoDatos();
+            bool Usando = false;
+            try
+            {
+                accesoDatos.setearConsulta("SELECT IdCategoria FROM ARTICULOS");
+                accesoDatos.ejecutarLectura();
+                while (accesoDatos.Lector.Read())
+                {
+                    listaUsados.Add((int)accesoDatos.Lector["IdCategoria"]);
+                }
+                foreach (int item in listaUsados)
+                {
+                    if(id == item)
+                    {
+                        Usando = true; 
+                    }
+                }
+                return Usando;
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
+
+        private void btnBuscarCategorias_Click(object sender, EventArgs e)
+        {
+            List<Categoria> listafiltrada;
+            string filtro = tbBuscarCategorias.Text;
+            if (filtro != "")
+            {
+                listafiltrada = listaCategoria.FindAll(x => x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.ID == Int32.Parse(filtro)); ;
+                
+            }
+            else
+            {
+                listafiltrada = listaCategoria;
+            }
+
+            dgvListaCategorias.DataSource = null;
+            dgvListaCategorias.DataSource = listafiltrada;
         }
     }
 }
