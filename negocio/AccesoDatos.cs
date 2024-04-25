@@ -12,19 +12,15 @@ namespace negocio
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
-
-
-
         public SqlDataReader Lector { get; set; }
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection(".\\SQLEXPRESS; database=CATALOGO_DB_v3; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
-
         }
-            public void setearConsulta(string consulta)
-                {
+        public void setearConsulta(string consulta)
+        {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
         }
@@ -38,19 +34,17 @@ namespace negocio
                 lector = comando.ExecuteReader();
                 Lector = lector;
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-
-                throw ex;
+                throw exception;
             }
         }
         public void cerrarConexion()
         {
-            if (lector != null) 
+            if (lector != null) {
                 lector.Close();
+            }
             conexion.Close();
         }
-
-
     }
 }
