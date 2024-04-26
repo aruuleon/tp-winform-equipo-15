@@ -24,10 +24,14 @@ namespace CatalogoWinForm
             listaArticulos = articuloNegocio.listar();
             dgvListaArticulos.DataSource = listaArticulos;
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void btnAgregarArticulo_Click(object sender, EventArgs e)
+        {
+            AgregarArticulo agregarArticulo = new AgregarArticulo();
+            agregarArticulo.ShowDialog();
         }
     }
 }

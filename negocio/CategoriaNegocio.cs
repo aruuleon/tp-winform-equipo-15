@@ -30,7 +30,6 @@ namespace negocio
                     aux.Descripcion = (string)accesoCategoria.Lector["Descripcion"];
 
                     lista.Add(aux);
-
                 }
                                                    
                 return lista;

@@ -24,7 +24,6 @@ namespace negocio
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
         }
-
         public void ejecutarLectura()
         {
             comando.Connection = conexion;
@@ -52,6 +51,10 @@ namespace negocio
             {
                 throw ex;
             }
+        }
+        public void setearParametros(string name, object value)
+        {
+            comando.Parameters.AddWithValue(name, value);
         }
         public void cerrarConexion()
         {
