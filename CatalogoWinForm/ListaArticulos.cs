@@ -19,19 +19,42 @@ namespace CatalogoWinForm
             InitializeComponent();
         }
         private void ListaArticulos_Load(object sender, EventArgs e) {
+
+            Cargar();
+        }
+
+        private void Cargar()
+        {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
-            listaArticulos = articuloNegocio.listar();
-            dgvListaArticulos.DataSource = listaArticulos;
+            try
+            {
+                listaArticulos = articuloNegocio.listar();
+                dgvListaArticulos.DataSource = listaArticulos;
+                ocultarColumnas();
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ocurrio un error al cargar los datos, comuniquese con el servicio tecnico");
+            }
         }
+        private void ocultarColumnas()
+        {
+            dgvListaArticulos.Columns["Id"].Visible = false;
+        }
+
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Close();
         }
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
         {
-            AgregarArticulo agregarArticulo = new AgregarArticulo();
+            AltaArticulo agregarArticulo = new AltaArticulo();
             agregarArticulo.ShowDialog();
+            Cargar();
+            
         }
     }
 }

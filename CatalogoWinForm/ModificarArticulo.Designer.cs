@@ -183,9 +183,8 @@
             // 
             this.txtDescripcionModificarArticulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtDescripcionModificarArticulo.Location = new System.Drawing.Point(93, 302);
-            this.txtDescripcionModificarArticulo.Multiline = true;
             this.txtDescripcionModificarArticulo.Name = "txtDescripcionModificarArticulo";
-            this.txtDescripcionModificarArticulo.Size = new System.Drawing.Size(369, 58);
+            this.txtDescripcionModificarArticulo.Size = new System.Drawing.Size(369, 20);
             this.txtDescripcionModificarArticulo.TabIndex = 34;
             // 
             // cbMarcaModificarArticulo
@@ -248,6 +247,8 @@
             this.Controls.Add(this.lblCategoriaModificarTitulo);
             this.Controls.Add(this.lblNombreModificarTitulo);
             this.Controls.Add(this.lblTituloDetalles);
+            this.MaximumSize = new System.Drawing.Size(555, 685);
+            this.MinimumSize = new System.Drawing.Size(555, 685);
             this.Name = "ModificarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Articulo";

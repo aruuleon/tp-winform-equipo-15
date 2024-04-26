@@ -8,17 +8,21 @@ using dominio;
 namespace negocio {
     public class ArticuloNegocio {
         private AccesoDatos accesoDatos = new AccesoDatos();
-        public List <Articulo> listar() {
+        public List<Articulo> listar()
+        {
             List<Articulo> listaArticulos = new List<Articulo>();
-            try {
+            try
+            {
                 accesoDatos.setearConsulta(
-                    "SELECT Codigo, Nombre, A.Descripcion, C.Descripcion, Precio " +
+                    "SELECT  Codigo, Nombre, A.Descripcion, C.Descripcion, Precio, A.Id AS IdArt " +
                     "FROM ARTICULOS A INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id"
                 );
                 accesoDatos.ejecutarLectura();
                 while (accesoDatos.Lector.Read())
                 {
                     Articulo articulo = new Articulo();
+                   
+                    articulo.Id = (int)accesoDatos.Lector["IdARt"];
                     articulo.Codigo = (string)accesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
                     articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
@@ -30,12 +34,20 @@ namespace negocio {
                     listaArticulos.Add(articulo);
                 }
                 return listaArticulos;
-            } catch (Exception exception) {
+            }
+            catch (Exception exception)
+            {
                 throw exception;
-            } finally {
+            }
+            finally
+            {
                 accesoDatos.cerrarConexion();
             }
         }
+
+        
+
+
         public void agregar(Articulo articulo)
         {
             try
