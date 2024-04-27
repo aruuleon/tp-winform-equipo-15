@@ -50,6 +50,7 @@
             this.dgvListaMarcas.Location = new System.Drawing.Point(108, 128);
             this.dgvListaMarcas.MultiSelect = false;
             this.dgvListaMarcas.Name = "dgvListaMarcas";
+            this.dgvListaMarcas.RowHeadersWidth = 51;
             this.dgvListaMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaMarcas.Size = new System.Drawing.Size(602, 202);
             this.dgvListaMarcas.TabIndex = 0;
@@ -83,7 +84,7 @@
             this.lblTituloMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloMarcas.Location = new System.Drawing.Point(351, 44);
             this.lblTituloMarcas.Name = "lblTituloMarcas";
-            this.lblTituloMarcas.Size = new System.Drawing.Size(102, 25);
+            this.lblTituloMarcas.Size = new System.Drawing.Size(130, 31);
             this.lblTituloMarcas.TabIndex = 3;
             this.lblTituloMarcas.Text = "MARCAS";
             this.lblTituloMarcas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -95,6 +96,7 @@
             this.tbBuscarMarcas.Name = "tbBuscarMarcas";
             this.tbBuscarMarcas.Size = new System.Drawing.Size(166, 20);
             this.tbBuscarMarcas.TabIndex = 4;
+            this.tbBuscarMarcas.TextChanged += new System.EventHandler(this.tbBuscarMarcas_TextChanged);
             // 
             // btnBuscarMarcas
             // 
@@ -105,6 +107,7 @@
             this.btnBuscarMarcas.TabIndex = 5;
             this.btnBuscarMarcas.Text = "BUSCAR";
             this.btnBuscarMarcas.UseVisualStyleBackColor = true;
+            this.btnBuscarMarcas.Click += new System.EventHandler(this.btnBuscarMarcas_Click);
             // 
             // btnAgregarMarcas
             // 

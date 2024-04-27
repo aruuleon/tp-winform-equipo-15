@@ -1,6 +1,7 @@
 ﻿using dominio;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,22 @@ namespace negocio
 {
 public class MarcaNegocio
     {
+       private List<Marca> lista = new List<Marca>();
+       private AccesoDatos accesoMarca = new AccesoDatos();
+        private bool ComprobarDato(Marca m)
+        {
+            foreach (Marca marca in lista)
+            {
+                if(marca.Descripcion == m.Descripcion)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public List<Marca> listar()
         {
-            List<Marca> lista = new List<Marca>();
-            AccesoDatos accesoMarca = new AccesoDatos();
+         
 
             try
             {
@@ -26,8 +39,11 @@ public class MarcaNegocio
 
                     if (!(accesoMarca.Lector["Descripcion"] is DBNull))
                         aux.Descripcion = (string)accesoMarca.Lector["Descripcion"];
-
-                    lista.Add(aux);
+                    if (!(ComprobarDato(aux)))
+                    { 
+                        lista.Add(aux);
+                    }
+                    
                 }
 
                 return lista;
@@ -45,11 +61,11 @@ public class MarcaNegocio
         }
         public void agregar(Marca marca)
         {
-            AccesoDatos datos = new AccesoDatos();
+           
             try
             {
-                datos.setearConsulta("INSERT INTO MARCAS VALUES ('" +marca.Descripcion + "')");
-                datos.ejecutarAccion();
+                accesoMarca.setearConsulta("INSERT INTO MARCAS VALUES ('" +marca.Descripcion + "')");
+                accesoMarca.ejecutarAccion();
             }
             catch (Exception ex)
             {
@@ -58,16 +74,16 @@ public class MarcaNegocio
             }
             finally
             {
-                datos.cerrarConexion();
+               accesoMarca.cerrarConexion();
             }
         }
         public void modificar(Marca marca)
         {
-            AccesoDatos datos = new AccesoDatos();
+          
             try
             {
-                datos.setearConsulta("UPDATE MARCAS SET Descripcion = '" + marca.Descripcion + "' WHERE ID = " + marca.Id);
-                datos.ejecutarAccion();
+                accesoMarca.setearConsulta("UPDATE MARCAS SET Descripcion = '" + marca.Descripcion + "' WHERE ID = " + marca.Id);
+                accesoMarca.ejecutarAccion();
             }
             catch (Exception ex)
             {
@@ -76,18 +92,18 @@ public class MarcaNegocio
             }
             finally
             {
-                datos.cerrarConexion();
+                accesoMarca.cerrarConexion();
             }
         }
 
 
         public void eliminar(int id)
         {
-            AccesoDatos datos = new AccesoDatos();
+           
             try
             {
-                datos.setearConsulta("DELETE MARCAS WHERE Id =" + id);
-                datos.ejecutarAccion();
+               accesoMarca.setearConsulta("DELETE MARCAS WHERE Id =" + id);
+                accesoMarca.ejecutarAccion();
             }
             catch (Exception ex)
             {
@@ -96,7 +112,7 @@ public class MarcaNegocio
             }
             finally
             {
-                datos.cerrarConexion();
+                accesoMarca.cerrarConexion();
             }
         }
     }

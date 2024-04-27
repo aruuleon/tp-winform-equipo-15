@@ -1,6 +1,7 @@
 ﻿using dominio;
 using negocio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace CatalogoWinForm
             InitializeComponent();
 
         }
-
+      
         private void Cargar()
         {
 
@@ -30,6 +31,7 @@ namespace CatalogoWinForm
             try
             {
                 listaMarca = marcaNegocio.listar();
+
                 dgvListaMarcas.DataSource = listaMarca;
                 ocultarColumnas();
             }
@@ -140,6 +142,44 @@ namespace CatalogoWinForm
 
                 MessageBox.Show("Ocurrio un error al eliminar los datos, comuniquese con el servicio tecnico");
             }
+        }
+
+        private void btnBuscarMarcas_Click(object sender, EventArgs e)
+        {
+            string descripcion = tbBuscarMarcas.Text;
+            List<Marca> listaAux  = new List<Marca>(); ;
+            try
+            {
+                if (!(descripcion == ""))
+                {
+                    foreach (Marca marca in listaMarca)
+                    {
+
+                        if (descripcion == marca.Descripcion)
+                        {
+
+                            listaAux.Add(marca);
+
+                        }
+
+                    }
+                    dgvListaMarcas.DataSource = listaAux;
+                }
+              
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        
+        }
+
+        private void tbBuscarMarcas_TextChanged(object sender, EventArgs e)
+        {
+            string texto = tbBuscarMarcas.Text;
+
+            if (texto=="") dgvListaMarcas.DataSource = listaMarca;
         }
     }
 }
