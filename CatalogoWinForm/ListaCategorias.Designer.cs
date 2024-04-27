@@ -95,6 +95,7 @@
             this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaCategorias.Size = new System.Drawing.Size(602, 202);
             this.dgvListaCategorias.TabIndex = 6;
+           
             // 
             // btnAgregarCategorias
             // 

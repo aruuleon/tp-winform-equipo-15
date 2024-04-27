@@ -161,5 +161,6 @@ namespace CatalogoWinForm
                 btnEliminarCategorias.Enabled = false;
             }
         }
-    }
+
+           }
 }
