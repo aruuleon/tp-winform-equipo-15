@@ -64,11 +64,11 @@
     <Compile Include="AgregarMarca.Designer.cs">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetallesArticulo.cs">
+    <Compile Include="DetalleArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetallesArticulo.Designer.cs">
-      <DependentUpon>DetallesArticulo.cs</DependentUpon>
+    <Compile Include="DetalleArticulo.Designer.cs">
+      <DependentUpon>DetalleArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -124,8 +124,8 @@
     <EmbeddedResource Include="AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetallesArticulo.resx">
-      <DependentUpon>DetallesArticulo.cs</DependentUpon>
+    <EmbeddedResource Include="DetalleArticulo.resx">
+      <DependentUpon>DetalleArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

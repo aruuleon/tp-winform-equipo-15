@@ -22,7 +22,7 @@ namespace negocio {
                 {
                     Articulo articulo = new Articulo();
                    
-                    articulo.Id = (int)accesoDatos.Lector["IdARt"];
+                    //articulo.Id = (int)accesoDatos.Lector["Id"];
                     articulo.Codigo = (string)accesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
                     articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
@@ -44,10 +44,6 @@ namespace negocio {
                 accesoDatos.cerrarConexion();
             }
         }
-
-        
-
-
         public void agregar(Articulo articulo)
         {
             try
@@ -68,6 +64,37 @@ namespace negocio {
                 throw exception;
             }
             finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+        public Articulo buscar(string codigo)
+        {
+            Articulo articulo = new Articulo();
+            try
+            {
+                accesoDatos.setearConsulta(
+                    "SELECT Codigo, Nombre, Descripcion, IdCategoria, Precio FROM ARTICULOS " +
+                    "WHERE Codigo = '" + codigo + "'"
+                );
+                accesoDatos.ejecutarAccion();
+                while(accesoDatos.Lector.Read()) {
+                    //articulo.Id = (int)accesoDatos.Lector["Id"];
+                    articulo.Codigo = (string)accesoDatos.Lector["Codigo"];
+                    articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
+                    articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
+                    articulo.Categoria = new Categoria();
+                    articulo.Categoria.ID = (int)accesoDatos.Lector["IdCategoria"];
+                    articulo.Categoria.Descripcion = (string)accesoDatos.Lector["Descripcion"];
+                    articulo.Precio = accesoDatos.Lector.GetDecimal(4);
+                    //articulo.Marca = new Marca();
+                    //articulo.Marca.Descripcion = (string)accesoDatos.Lector["IdMarca"];
+                }
+                return articulo;
+            } catch (Exception exception)
+            {
+                throw exception;
+            } finally
             {
                 accesoDatos.cerrarConexion();
             }

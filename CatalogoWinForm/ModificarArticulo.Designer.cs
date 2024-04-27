@@ -32,39 +32,42 @@
             this.btnBeforeImgModificar = new System.Windows.Forms.Button();
             this.btnNextImgModificar = new System.Windows.Forms.Button();
             this.pbModificarArticulo = new System.Windows.Forms.PictureBox();
-            this.lblPrecioModificarTitulo = new System.Windows.Forms.Label();
-            this.lblCodigoModificarTitulo = new System.Windows.Forms.Label();
-            this.lblDescripcionModificarTitulo = new System.Windows.Forms.Label();
-            this.lblMarcaModificarTitulo = new System.Windows.Forms.Label();
-            this.lblCategoriaModificarTitulo = new System.Windows.Forms.Label();
-            this.lblNombreModificarTitulo = new System.Windows.Forms.Label();
-            this.lblTituloDetalles = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.txtNombreModificarArticulo = new System.Windows.Forms.TextBox();
-            this.txtCodigoModificarArticulo = new System.Windows.Forms.TextBox();
-            this.txtPrecioModificarArticulo = new System.Windows.Forms.TextBox();
-            this.txtDescripcionModificarArticulo = new System.Windows.Forms.TextBox();
-            this.cbMarcaModificarArticulo = new System.Windows.Forms.ComboBox();
-            this.cbCategoriaModificarArticulo = new System.Windows.Forms.ComboBox();
-            this.btnSubirImgModifcarArt = new System.Windows.Forms.Button();
             this.btnEliminarImgModificar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUrlImg = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSubirImgAgregarArt = new System.Windows.Forms.Button();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbModificarArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBeforeImgModificar
             // 
-            this.btnBeforeImgModificar.Location = new System.Drawing.Point(87, 489);
+            this.btnBeforeImgModificar.Location = new System.Drawing.Point(116, 698);
+            this.btnBeforeImgModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBeforeImgModificar.Name = "btnBeforeImgModificar";
-            this.btnBeforeImgModificar.Size = new System.Drawing.Size(29, 34);
+            this.btnBeforeImgModificar.Size = new System.Drawing.Size(44, 52);
             this.btnBeforeImgModificar.TabIndex = 27;
             this.btnBeforeImgModificar.Text = "<";
             this.btnBeforeImgModificar.UseVisualStyleBackColor = true;
             // 
             // btnNextImgModificar
             // 
-            this.btnNextImgModificar.Location = new System.Drawing.Point(435, 489);
+            this.btnNextImgModificar.Location = new System.Drawing.Point(638, 698);
+            this.btnNextImgModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNextImgModificar.Name = "btnNextImgModificar";
-            this.btnNextImgModificar.Size = new System.Drawing.Size(29, 34);
+            this.btnNextImgModificar.Size = new System.Drawing.Size(44, 52);
             this.btnNextImgModificar.TabIndex = 26;
             this.btnNextImgModificar.Text = ">";
             this.btnNextImgModificar.UseVisualStyleBackColor = true;
@@ -72,183 +75,202 @@
             // pbModificarArticulo
             // 
             this.pbModificarArticulo.Image = ((System.Drawing.Image)(resources.GetObject("pbModificarArticulo.Image")));
-            this.pbModificarArticulo.Location = new System.Drawing.Point(122, 418);
+            this.pbModificarArticulo.Location = new System.Drawing.Point(169, 589);
+            this.pbModificarArticulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbModificarArticulo.Name = "pbModificarArticulo";
-            this.pbModificarArticulo.Size = new System.Drawing.Size(307, 169);
+            this.pbModificarArticulo.Size = new System.Drawing.Size(460, 260);
             this.pbModificarArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbModificarArticulo.TabIndex = 25;
             this.pbModificarArticulo.TabStop = false;
             // 
-            // lblPrecioModificarTitulo
-            // 
-            this.lblPrecioModificarTitulo.AutoSize = true;
-            this.lblPrecioModificarTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioModificarTitulo.Location = new System.Drawing.Point(89, 142);
-            this.lblPrecioModificarTitulo.Name = "lblPrecioModificarTitulo";
-            this.lblPrecioModificarTitulo.Size = new System.Drawing.Size(81, 20);
-            this.lblPrecioModificarTitulo.TabIndex = 23;
-            this.lblPrecioModificarTitulo.Text = "PRECIO:";
-            // 
-            // lblCodigoModificarTitulo
-            // 
-            this.lblCodigoModificarTitulo.AutoSize = true;
-            this.lblCodigoModificarTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoModificarTitulo.Location = new System.Drawing.Point(89, 89);
-            this.lblCodigoModificarTitulo.Name = "lblCodigoModificarTitulo";
-            this.lblCodigoModificarTitulo.Size = new System.Drawing.Size(85, 20);
-            this.lblCodigoModificarTitulo.TabIndex = 22;
-            this.lblCodigoModificarTitulo.Text = "CODIGO:";
-            // 
-            // lblDescripcionModificarTitulo
-            // 
-            this.lblDescripcionModificarTitulo.AutoSize = true;
-            this.lblDescripcionModificarTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionModificarTitulo.Location = new System.Drawing.Point(89, 279);
-            this.lblDescripcionModificarTitulo.Name = "lblDescripcionModificarTitulo";
-            this.lblDescripcionModificarTitulo.Size = new System.Drawing.Size(136, 20);
-            this.lblDescripcionModificarTitulo.TabIndex = 21;
-            this.lblDescripcionModificarTitulo.Text = "DESCRIPCION:";
-            // 
-            // lblMarcaModificarTitulo
-            // 
-            this.lblMarcaModificarTitulo.AutoSize = true;
-            this.lblMarcaModificarTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcaModificarTitulo.Location = new System.Drawing.Point(89, 188);
-            this.lblMarcaModificarTitulo.Name = "lblMarcaModificarTitulo";
-            this.lblMarcaModificarTitulo.Size = new System.Drawing.Size(77, 20);
-            this.lblMarcaModificarTitulo.TabIndex = 20;
-            this.lblMarcaModificarTitulo.Text = "MARCA:";
-            // 
-            // lblCategoriaModificarTitulo
-            // 
-            this.lblCategoriaModificarTitulo.AutoSize = true;
-            this.lblCategoriaModificarTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaModificarTitulo.Location = new System.Drawing.Point(89, 234);
-            this.lblCategoriaModificarTitulo.Name = "lblCategoriaModificarTitulo";
-            this.lblCategoriaModificarTitulo.Size = new System.Drawing.Size(118, 20);
-            this.lblCategoriaModificarTitulo.TabIndex = 19;
-            this.lblCategoriaModificarTitulo.Text = "CATEGORIA:";
-            // 
-            // lblNombreModificarTitulo
-            // 
-            this.lblNombreModificarTitulo.AutoSize = true;
-            this.lblNombreModificarTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreModificarTitulo.Location = new System.Drawing.Point(89, 43);
-            this.lblNombreModificarTitulo.Name = "lblNombreModificarTitulo";
-            this.lblNombreModificarTitulo.Size = new System.Drawing.Size(90, 20);
-            this.lblNombreModificarTitulo.TabIndex = 18;
-            this.lblNombreModificarTitulo.Text = "NOMBRE:";
-            // 
-            // lblTituloDetalles
-            // 
-            this.lblTituloDetalles.AutoSize = true;
-            this.lblTituloDetalles.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloDetalles.Location = new System.Drawing.Point(160, 9);
-            this.lblTituloDetalles.Name = "lblTituloDetalles";
-            this.lblTituloDetalles.Size = new System.Drawing.Size(239, 25);
-            this.lblTituloDetalles.TabIndex = 17;
-            this.lblTituloDetalles.Text = "MODIFICAR ARTICULO";
-            // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(179, 603);
+            this.btnModificar.Location = new System.Drawing.Point(254, 882);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(204, 36);
+            this.btnModificar.Size = new System.Drawing.Size(306, 55);
             this.btnModificar.TabIndex = 28;
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // txtNombreModificarArticulo
-            // 
-            this.txtNombreModificarArticulo.Location = new System.Drawing.Point(93, 66);
-            this.txtNombreModificarArticulo.Name = "txtNombreModificarArticulo";
-            this.txtNombreModificarArticulo.Size = new System.Drawing.Size(369, 20);
-            this.txtNombreModificarArticulo.TabIndex = 29;
-            // 
-            // txtCodigoModificarArticulo
-            // 
-            this.txtCodigoModificarArticulo.Location = new System.Drawing.Point(93, 112);
-            this.txtCodigoModificarArticulo.Name = "txtCodigoModificarArticulo";
-            this.txtCodigoModificarArticulo.Size = new System.Drawing.Size(369, 20);
-            this.txtCodigoModificarArticulo.TabIndex = 30;
-            // 
-            // txtPrecioModificarArticulo
-            // 
-            this.txtPrecioModificarArticulo.Location = new System.Drawing.Point(93, 165);
-            this.txtPrecioModificarArticulo.Name = "txtPrecioModificarArticulo";
-            this.txtPrecioModificarArticulo.Size = new System.Drawing.Size(369, 20);
-            this.txtPrecioModificarArticulo.TabIndex = 31;
-            // 
-            // txtDescripcionModificarArticulo
-            // 
-            this.txtDescripcionModificarArticulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtDescripcionModificarArticulo.Location = new System.Drawing.Point(93, 302);
-            this.txtDescripcionModificarArticulo.Name = "txtDescripcionModificarArticulo";
-            this.txtDescripcionModificarArticulo.Size = new System.Drawing.Size(369, 20);
-            this.txtDescripcionModificarArticulo.TabIndex = 34;
-            // 
-            // cbMarcaModificarArticulo
-            // 
-            this.cbMarcaModificarArticulo.FormattingEnabled = true;
-            this.cbMarcaModificarArticulo.Location = new System.Drawing.Point(93, 210);
-            this.cbMarcaModificarArticulo.Name = "cbMarcaModificarArticulo";
-            this.cbMarcaModificarArticulo.Size = new System.Drawing.Size(369, 21);
-            this.cbMarcaModificarArticulo.TabIndex = 35;
-            // 
-            // cbCategoriaModificarArticulo
-            // 
-            this.cbCategoriaModificarArticulo.FormattingEnabled = true;
-            this.cbCategoriaModificarArticulo.Location = new System.Drawing.Point(93, 257);
-            this.cbCategoriaModificarArticulo.Name = "cbCategoriaModificarArticulo";
-            this.cbCategoriaModificarArticulo.Size = new System.Drawing.Size(369, 21);
-            this.cbCategoriaModificarArticulo.TabIndex = 36;
-            // 
-            // btnSubirImgModifcarArt
-            // 
-            this.btnSubirImgModifcarArt.Location = new System.Drawing.Point(34, 366);
-            this.btnSubirImgModifcarArt.Name = "btnSubirImgModifcarArt";
-            this.btnSubirImgModifcarArt.Size = new System.Drawing.Size(112, 35);
-            this.btnSubirImgModifcarArt.TabIndex = 37;
-            this.btnSubirImgModifcarArt.Text = "SUBIR IMAGENES";
-            this.btnSubirImgModifcarArt.UseVisualStyleBackColor = true;
             // 
             // btnEliminarImgModificar
             // 
             this.btnEliminarImgModificar.BackColor = System.Drawing.Color.Red;
             this.btnEliminarImgModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminarImgModificar.Location = new System.Drawing.Point(408, 418);
+            this.btnEliminarImgModificar.Location = new System.Drawing.Point(598, 589);
+            this.btnEliminarImgModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminarImgModificar.Name = "btnEliminarImgModificar";
-            this.btnEliminarImgModificar.Size = new System.Drawing.Size(21, 20);
+            this.btnEliminarImgModificar.Size = new System.Drawing.Size(32, 31);
             this.btnEliminarImgModificar.TabIndex = 38;
             this.btnEliminarImgModificar.Text = "X";
             this.btnEliminarImgModificar.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(213, 491);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 20);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "URL DE IMAGEN";
+            // 
+            // txtUrlImg
+            // 
+            this.txtUrlImg.Location = new System.Drawing.Point(214, 525);
+            this.txtUrlImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUrlImg.Name = "txtUrlImg";
+            this.txtUrlImg.Size = new System.Drawing.Size(360, 26);
+            this.txtUrlImg.TabIndex = 61;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(214, 134);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(360, 26);
+            this.txtCodigo.TabIndex = 60;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(208, 109);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 20);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "CODIGO";
+            // 
+            // btnSubirImgAgregarArt
+            // 
+            this.btnSubirImgAgregarArt.Location = new System.Drawing.Point(585, 522);
+            this.btnSubirImgAgregarArt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSubirImgAgregarArt.Name = "btnSubirImgAgregarArt";
+            this.btnSubirImgAgregarArt.Size = new System.Drawing.Size(114, 35);
+            this.btnSubirImgAgregarArt.TabIndex = 58;
+            this.btnSubirImgAgregarArt.Text = "Agregar";
+            this.btnSubirImgAgregarArt.UseVisualStyleBackColor = true;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(214, 437);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(360, 26);
+            this.txtDescripcion.TabIndex = 57;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(210, 411);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(120, 20);
+            this.lblDescripcion.TabIndex = 56;
+            this.lblDescripcion.Text = "DESCRIPCION";
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(214, 357);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(360, 26);
+            this.txtPrecio.TabIndex = 55;
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(210, 334);
+            this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(70, 20);
+            this.lblPrecio.TabIndex = 54;
+            this.lblPrecio.Text = "PRECIO";
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(214, 277);
+            this.cboMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(360, 28);
+            this.cboMarca.TabIndex = 53;
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(213, 254);
+            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(67, 20);
+            this.lblMarca.TabIndex = 52;
+            this.lblMarca.Text = "MARCA";
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(214, 205);
+            this.cboCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(360, 28);
+            this.cboCategoria.TabIndex = 51;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(210, 180);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(104, 20);
+            this.lblCategoria.TabIndex = 50;
+            this.lblCategoria.Text = "CATEGORIA";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(214, 65);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(360, 26);
+            this.txtNombre.TabIndex = 49;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(210, 40);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(79, 20);
+            this.lblNombre.TabIndex = 48;
+            this.lblNombre.Text = "NOMBRE";
+            // 
             // ModificarArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 646);
+            this.ClientSize = new System.Drawing.Size(800, 968);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtUrlImg);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSubirImgAgregarArt);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.lblDescripcion);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.lblPrecio);
+            this.Controls.Add(this.cboMarca);
+            this.Controls.Add(this.lblMarca);
+            this.Controls.Add(this.cboCategoria);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnEliminarImgModificar);
-            this.Controls.Add(this.btnSubirImgModifcarArt);
-            this.Controls.Add(this.cbCategoriaModificarArticulo);
-            this.Controls.Add(this.cbMarcaModificarArticulo);
-            this.Controls.Add(this.txtDescripcionModificarArticulo);
-            this.Controls.Add(this.txtPrecioModificarArticulo);
-            this.Controls.Add(this.txtCodigoModificarArticulo);
-            this.Controls.Add(this.txtNombreModificarArticulo);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBeforeImgModificar);
             this.Controls.Add(this.btnNextImgModificar);
             this.Controls.Add(this.pbModificarArticulo);
-            this.Controls.Add(this.lblPrecioModificarTitulo);
-            this.Controls.Add(this.lblCodigoModificarTitulo);
-            this.Controls.Add(this.lblDescripcionModificarTitulo);
-            this.Controls.Add(this.lblMarcaModificarTitulo);
-            this.Controls.Add(this.lblCategoriaModificarTitulo);
-            this.Controls.Add(this.lblNombreModificarTitulo);
-            this.Controls.Add(this.lblTituloDetalles);
-            this.MaximumSize = new System.Drawing.Size(555, 685);
-            this.MinimumSize = new System.Drawing.Size(555, 685);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(822, 1024);
+            this.MinimumSize = new System.Drawing.Size(822, 1018);
             this.Name = "ModificarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Articulo";
@@ -262,21 +284,22 @@
         private System.Windows.Forms.Button btnBeforeImgModificar;
         private System.Windows.Forms.Button btnNextImgModificar;
         private System.Windows.Forms.PictureBox pbModificarArticulo;
-        private System.Windows.Forms.Label lblPrecioModificarTitulo;
-        private System.Windows.Forms.Label lblCodigoModificarTitulo;
-        private System.Windows.Forms.Label lblDescripcionModificarTitulo;
-        private System.Windows.Forms.Label lblMarcaModificarTitulo;
-        private System.Windows.Forms.Label lblCategoriaModificarTitulo;
-        private System.Windows.Forms.Label lblNombreModificarTitulo;
-        private System.Windows.Forms.Label lblTituloDetalles;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.TextBox txtNombreModificarArticulo;
-        private System.Windows.Forms.TextBox txtCodigoModificarArticulo;
-        private System.Windows.Forms.TextBox txtPrecioModificarArticulo;
-        private System.Windows.Forms.TextBox txtDescripcionModificarArticulo;
-        private System.Windows.Forms.ComboBox cbMarcaModificarArticulo;
-        private System.Windows.Forms.ComboBox cbCategoriaModificarArticulo;
-        private System.Windows.Forms.Button btnSubirImgModifcarArt;
         private System.Windows.Forms.Button btnEliminarImgModificar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUrlImg;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSubirImgAgregarArt;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblNombre;
     }
 }

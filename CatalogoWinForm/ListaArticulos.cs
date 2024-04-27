@@ -19,10 +19,8 @@ namespace CatalogoWinForm
             InitializeComponent();
         }
         private void ListaArticulos_Load(object sender, EventArgs e) {
-
             Cargar();
         }
-
         private void Cargar()
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
@@ -32,11 +30,9 @@ namespace CatalogoWinForm
                 listaArticulos = articuloNegocio.listar();
                 dgvListaArticulos.DataSource = listaArticulos;
                 ocultarColumnas();
-
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Ocurrio un error al cargar los datos, comuniquese con el servicio tecnico");
             }
         }
@@ -44,7 +40,6 @@ namespace CatalogoWinForm
         {
             dgvListaArticulos.Columns["Id"].Visible = false;
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Close();
@@ -54,7 +49,21 @@ namespace CatalogoWinForm
             AltaArticulo agregarArticulo = new AltaArticulo();
             agregarArticulo.ShowDialog();
             Cargar();
-            
+        }
+
+        private void btnDetalle_MouseClick(object sender, MouseEventArgs e)
+        {
+            Articulo articulo = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem; 
+            DetalleArticulo detalleArticulo = new DetalleArticulo(articulo);
+            detalleArticulo.ShowDialog();
+        }
+
+        private void btnModificarArticulo_Click(object sender, EventArgs e)
+        {
+            Articulo articulo = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            AltaArticulo modificarArticulo = new AltaArticulo(articulo);
+            modificarArticulo.ShowDialog();
+            Cargar();
         }
     }
 }

@@ -15,12 +15,17 @@ namespace CatalogoWinForm
     public partial class AltaArticulo : Form
     {
         private List<string> img = new List<string>();
+        private Articulo articulo = null;
         int indice = 0;
         public AltaArticulo()
         {
             InitializeComponent();
         }
-
+        public AltaArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
@@ -42,20 +47,34 @@ namespace CatalogoWinForm
                 MessageBox.Show(exception.ToString());
             }
         }
-
-        private void AgregarArticulo_Load(object sender, EventArgs e)
+        private void AltaArticulo_Load(object sender, EventArgs e)
         {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             try
             {
                 cboCategoria.DataSource = categoriaNegocio.listar();
+                //cboMarca.DataSource = marcaNegocio.listar();
+
+                cboCategoria.ValueMember = "Id";
+                cboCategoria.DisplayMember = "Descripcion";
+                //cboMarca.ValueMember = "Id";
+                //cboMarca.DisplayMember = "Descripcion";
+
+                if (articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                    txtDescripcion.Text = articulo.Descripcion;
+                    cboCategoria.SelectedValue = articulo.Categoria.ID;
+                    //cboMarca.SelectedValue = articulo.Marca.ID;
+                }
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
             }
         }
-
         private void btnSubirImgAgregarArt_Click(object sender, EventArgs e)
         {
             try
