@@ -47,9 +47,10 @@
             this.dgvListaMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvListaMarcas.Enabled = false;
             this.dgvListaMarcas.Location = new System.Drawing.Point(108, 128);
+            this.dgvListaMarcas.MultiSelect = false;
             this.dgvListaMarcas.Name = "dgvListaMarcas";
+            this.dgvListaMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaMarcas.Size = new System.Drawing.Size(602, 202);
             this.dgvListaMarcas.TabIndex = 0;
             // 
@@ -62,6 +63,7 @@
             this.btnModificarMarcas.TabIndex = 1;
             this.btnModificarMarcas.Text = "MODIFICAR";
             this.btnModificarMarcas.UseVisualStyleBackColor = true;
+            this.btnModificarMarcas.Click += new System.EventHandler(this.btnModificarMarcas_Click);
             // 
             // btnEliminarMarca
             // 
@@ -72,6 +74,7 @@
             this.btnEliminarMarca.TabIndex = 2;
             this.btnEliminarMarca.Text = "ELIMINAR";
             this.btnEliminarMarca.UseVisualStyleBackColor = true;
+            this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
             // 
             // lblTituloMarcas
             // 
@@ -112,6 +115,7 @@
             this.btnAgregarMarcas.TabIndex = 13;
             this.btnAgregarMarcas.Text = "AGREGAR";
             this.btnAgregarMarcas.UseVisualStyleBackColor = true;
+            this.btnAgregarMarcas.Click += new System.EventHandler(this.btnAgregarMarcas_Click);
             // 
             // btnVolver
             // 
@@ -142,6 +146,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Marcas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ListaMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

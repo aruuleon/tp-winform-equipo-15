@@ -1,6 +1,6 @@
 ﻿namespace CatalogoWinForm
 {
-    partial class AgregarMarca
+    partial class frmAgregarMarca
     {
         /// <summary>
         /// Required designer variable.
@@ -54,6 +54,7 @@
             this.btnAgregarMarca.TabIndex = 5;
             this.btnAgregarMarca.Text = "AGREGAR";
             this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
             // tbAgregarMarca
             // 
@@ -70,6 +71,7 @@
             this.btnCancelarAlta.TabIndex = 13;
             this.btnCancelarAlta.Text = "Cancelar";
             this.btnCancelarAlta.UseVisualStyleBackColor = true;
+            this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);
             // 
             // lblDescripcionAltaMarc
             // 
@@ -81,7 +83,7 @@
             this.lblDescripcionAltaMarc.TabIndex = 12;
             this.lblDescripcionAltaMarc.Text = "Descripcion:";
             // 
-            // AgregarMarca
+            // frmAgregarMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,9 +95,10 @@
             this.Controls.Add(this.lblTituloAgregarMarca);
             this.MaximumSize = new System.Drawing.Size(816, 255);
             this.MinimumSize = new System.Drawing.Size(816, 255);
-            this.Name = "AgregarMarca";
+            this.Name = "frmAgregarMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Marca";
+            this.Load += new System.EventHandler(this.frmAgregarMarca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
