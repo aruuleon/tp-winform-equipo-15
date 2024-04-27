@@ -164,6 +164,11 @@ namespace CatalogoWinForm
 
                     }
                     dgvListaMarcas.DataSource = listaAux;
+                    if (listaAux.Count <= 0)
+                    {
+                        btnModificarMarcas.Enabled = false;
+                        btnEliminarMarca.Enabled = false;
+                    }
                 }
               
             }

@@ -14,9 +14,10 @@ namespace CatalogoWinForm
 {
     public partial class AltaArticulo : Form
     {
+        public int idArt;
         private List<string> img = new List<string>();
         private Articulo articulo = null;
-        int indice = 0;
+        int indice = -1;
         public AltaArticulo()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace CatalogoWinForm
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            ImagenNegocio imagenNegocio = new negocio.ImagenNegocio();
             Articulo articulo = new Articulo();
             try
             {
@@ -38,7 +40,8 @@ namespace CatalogoWinForm
                 articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
 
-                articuloNegocio.agregar(articulo);
+                idArt = articuloNegocio.agregar(articulo);
+                imagenNegocio.agregar(img, idArt);
                 MessageBox.Show("Agregado correctamente");
                 Close();
             }
@@ -79,25 +82,34 @@ namespace CatalogoWinForm
         {
             try
             {
+                pbImgAgregar.Load(txtUrlImg.Text);
                 img.Add(txtUrlImg.Text);
-                indice = img.Count();
-                pbImgAgregar.Load(img[indice-1]);
+                indice = img.Count() - 1;
                 txtUrlImg.Text = "";
             }
-            catch (Exception )
+            catch (Exception)
             {
+                if (indice >= 0)
+                {
+                    pbImgAgregar.Load(img[indice]);
+                }
+                else
+                {
+                    imgDefoult();
+                }
 
-                pbImgAgregar.Load("https://th.bing.com/th/id/OIP.WeSkkwLXkUXbRcLJuN7I_gHaHa?rs=1&pid=ImgDetMain");
+                txtUrlImg.Text = "";
+                MessageBox.Show("Imagen no encontrada");
             }
-            
+
         }
 
         private void btnNextImg_Click(object sender, EventArgs e)
         {
             try
-            { 
-                
-                if (indice < img.Count-1)
+            {
+
+                if (indice < img.Count - 1)
                 {
                     indice++;
                     pbImgAgregar.Load(img[indice]);
@@ -130,16 +142,42 @@ namespace CatalogoWinForm
         {
             try
             {
-                img.RemoveAt(indice);
-                pbImgAgregar.Load(img[indice - 1]);
-                indice = img.Count;
+                img.Remove(pbImgAgregar.ImageLocation);
+                if (indice > 0)
+                {
+                    indice--;
+                }
+
+
+                if (img.Count > 0)
+                {
+                    pbImgAgregar.Load(img[indice]);
+                }
+                else imgDefoult();
+
+
             }
             catch (Exception)
             {
 
                 MessageBox.Show("No hay imagenes para eliminar");
             }
-            
+
+        }
+        private void imgDefoult()
+        {
+            try
+            {
+
+                pbImgAgregar.Load("https://th.bing.com/th/id/OIP.WeSkkwLXkUXbRcLJuN7I_gHaHa?rs=1&pid=ImgDetMain");
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("No funciona la defoult");
+            }
+
         }
     }
 }

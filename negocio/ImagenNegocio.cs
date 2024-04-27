@@ -7,12 +7,12 @@ using dominio;
 
 namespace negocio
 {
-    internal class ImagenNegocio
+    public class ImagenNegocio
     {
         public List<Imagen> Imagenes(int id)
         {
             List<Imagen> listaimagenes = new List<Imagen>();
-            AccesoDatos accesoDatos = new AccesoDatos();  
+            AccesoDatos accesoDatos = new AccesoDatos();
 
             try
             {
@@ -24,9 +24,9 @@ namespace negocio
                 while (accesoDatos.Lector.Read())
                 {
                     Imagen img = new Imagen();
-                    img.ID = (int)accesoDatos.Lector["Id"]; 
-                    img.IDArticulo = (int)accesoDatos.Lector["IdArticulo"]; 
-                    img.ImagenUrl = (string)accesoDatos.Lector["ImagenUrl"]; 
+                    img.ID = (int)accesoDatos.Lector["Id"];
+                    img.IDArticulo = (int)accesoDatos.Lector["IdArticulo"];
+                    img.ImagenUrl = (string)accesoDatos.Lector["ImagenUrl"];
 
                     listaimagenes.Add(img);
                 }
@@ -41,59 +41,45 @@ namespace negocio
                 accesoDatos.cerrarConexion();
             }
         }
-         public void agregar(Imagen nueva)
-         {
-             AccesoDatos datos = new AccesoDatos();
-             try
-             {
-                 datos.setearConsulta("INSERT INTO IMAGENES VALUES (" + nueva.IDArticulo + ", '" + nueva.ImagenUrl + "')");
-                 datos.ejecutarAccion();
-             }
-             catch (Exception ex)
-             {
+        public void agregar(List<string> img, int id)
+        {
 
-                 throw ex;
-             }
-             finally
-             {
-                 datos.cerrarConexion();
-             }
-         }
-         /*public void modificar(Categoria nueva)
-         {
-             AccesoDatos datos = new AccesoDatos();
-             try
-             {
-                 datos.setearConsulta("UPDATE IMAGENES SET Descripcion = '" + nueva.Descripcion + "' WHERE ID = " + nueva.ID);
-                 datos.ejecutarAccion();
-             }
-             catch (Exception ex)
-             {
+            try
+            {
+                foreach (string item in img)
+                {
+                    AccesoDatos datos = new AccesoDatos();
+                    datos.setearConsulta("INSERT INTO IMAGENES VALUES (@IdArt,'" + item + "')");
+                    datos.setearParametros("@IdArt", id);
+                    datos.ejecutarAccion();
+                    datos.cerrarConexion();
+                }
 
-                 throw ex;
-             }
-             finally
-             {
-                 datos.cerrarConexion();
-             }
-         }*/
-         public void eliminar(int id)
-         {
-             AccesoDatos datos = new AccesoDatos();
-             try
-             {
-                 datos.setearConsulta("DELETE IMAGENES WHERE Id =" + id);
-                 datos.ejecutarAccion();
-             }
-             catch (Exception ex)
-             {
+            }
+            catch (Exception ex)
+            {
 
-                 throw ex;
-             }
-             finally
-             {
-                 datos.cerrarConexion();
-             }
-         }
+                throw ex;
+            }
+        }
+
+        public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE IMAGENES WHERE Id =" + id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

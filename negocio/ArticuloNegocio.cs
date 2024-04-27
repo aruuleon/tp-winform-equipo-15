@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using dominio;
 
-namespace negocio {
-    public class ArticuloNegocio {
+namespace negocio
+{
+    public class ArticuloNegocio
+    {
         private AccesoDatos accesoDatos = new AccesoDatos();
         public List<Articulo> listar()
         {
@@ -21,7 +23,7 @@ namespace negocio {
                 while (accesoDatos.Lector.Read())
                 {
                     Articulo articulo = new Articulo();
-                   
+
                     //articulo.Id = (int)accesoDatos.Lector["Id"];
                     articulo.Codigo = (string)accesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
@@ -44,12 +46,14 @@ namespace negocio {
                 accesoDatos.cerrarConexion();
             }
         }
-        public void agregar(Articulo articulo)
+        public int agregar(Articulo articulo)
         {
+            int idArt;
             try
             {
                 accesoDatos.setearConsulta(
                     "INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdCategoria, Precio) " +
+                    "OUTPUT INSERTED.ID " +
                     "VALUES (@Codigo, @Nombre, @Descripcion, @IdCategoria, @Precio)"
                 );
                 accesoDatos.setearParametros("@Codigo", articulo.Codigo);
@@ -57,7 +61,8 @@ namespace negocio {
                 accesoDatos.setearParametros("@Descripcion", articulo.Descripcion);
                 accesoDatos.setearParametros("@IdCategoria", articulo.Categoria.ID);
                 accesoDatos.setearParametros("@Precio", articulo.Precio);
-                accesoDatos.ejecutarAccion();
+                idArt = accesoDatos.ejecutarScalar();
+                return idArt;
             }
             catch (Exception exception)
             {
@@ -78,7 +83,8 @@ namespace negocio {
                     "WHERE Codigo = '" + codigo + "'"
                 );
                 accesoDatos.ejecutarAccion();
-                while(accesoDatos.Lector.Read()) {
+                while (accesoDatos.Lector.Read())
+                {
                     //articulo.Id = (int)accesoDatos.Lector["Id"];
                     articulo.Codigo = (string)accesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
@@ -91,10 +97,12 @@ namespace negocio {
                     //articulo.Marca.Descripcion = (string)accesoDatos.Lector["IdMarca"];
                 }
                 return articulo;
-            } catch (Exception exception)
+            }
+            catch (Exception exception)
             {
                 throw exception;
-            } finally
+            }
+            finally
             {
                 accesoDatos.cerrarConexion();
             }
