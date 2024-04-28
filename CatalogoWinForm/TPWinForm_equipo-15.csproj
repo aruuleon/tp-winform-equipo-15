@@ -94,24 +94,6 @@
     <Compile Include="ListaMarcas.Designer.cs">
       <DependentUpon>ListaMarcas.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarArticulo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModificarArticulo.Designer.cs">
-      <DependentUpon>ModificarArticulo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModificarCategoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModificarCategoria.Designer.cs">
-      <DependentUpon>ModificarCategoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModificarMarca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModificarMarca.Designer.cs">
-      <DependentUpon>ModificarMarca.cs</DependentUpon>
-    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,15 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaMarcas.resx">
       <DependentUpon>ListaMarcas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModificarArticulo.resx">
-      <DependentUpon>ModificarArticulo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModificarCategoria.resx">
-      <DependentUpon>ModificarCategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModificarMarca.resx">
-      <DependentUpon>ModificarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\CatalogoWinForm.ListaCategorias.resources" />
     <EmbeddedResource Include="obj\Debug\CatalogoWinForm.ListaMarcas.resources" />

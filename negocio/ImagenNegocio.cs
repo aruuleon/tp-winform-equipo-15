@@ -44,8 +44,8 @@ namespace negocio
                 foreach (string item in img)
                 {
                     AccesoDatos datos = new AccesoDatos();
-                    datos.setearConsulta("INSERT INTO IMAGENES VALUES (@IdArt,'" + item + "')");
-                    datos.setearParametros("@IdArt", id);
+                    datos.setearConsulta("INSERT INTO IMAGENES VALUES (@IdArticulo,'" + item + "')");
+                    datos.setearParametros("@IdArticulo", id);
                     datos.ejecutarAccion();
                     datos.cerrarConexion();
                 }
@@ -63,7 +63,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("DELETE IMAGENES WHERE Id =" + id);
+                datos.setearConsulta("DELETE IMAGENES WHERE IdArticulo =" + id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

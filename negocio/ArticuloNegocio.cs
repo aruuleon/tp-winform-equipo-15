@@ -72,6 +72,33 @@ namespace negocio
                 accesoDatos.cerrarConexion();
             }
         }
+        public void Modificar(Articulo articulo)
+        {           
+            try
+            {
+                accesoDatos.setearConsulta("UPDATE ARTICULOS SET Codigo=@Codigo,Nombre= @Nombre, Descripcion=@Descripcion,IdCategoria= @IdCategoria,Precio= @Precio WHERE Id =" + articulo.Id); 
+                accesoDatos.setearParametros("@Codigo", articulo.Codigo);
+                accesoDatos.setearParametros("@Nombre", articulo.Nombre);
+                accesoDatos.setearParametros("@Descripcion", articulo.Descripcion);
+                accesoDatos.setearParametros("@IdCategoria", articulo.Categoria.ID);
+                accesoDatos.setearParametros("@Precio", articulo.Precio);
+                //accesoDatos.setearParametros("@Id", articulo.Id);
+                //accesoDatos.setearParametros("@IdMarca", articulo.Marca.Id);
+                accesoDatos.ejecutarAccion();
+                
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
+
+        
         public void eliminar(string codigo) {
             try {
                 accesoDatos.setearConsulta("DELETE FROM ARTICULOS WHERE Codigo = @Codigo");

@@ -18,6 +18,7 @@ namespace CatalogoWinForm
         private List<string> img = new List<string>();
         private Articulo articulo = null;
         int indice = -1;
+        public bool i = false;
         public AltaArticulo()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace CatalogoWinForm
         {
             InitializeComponent();
             this.articulo = articulo;
+            i = true;
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -34,16 +36,29 @@ namespace CatalogoWinForm
             Articulo articulo = new Articulo();
             try
             {
+               
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
+                if (i == false)
+                {
+                    idArt = articuloNegocio.agregar(articulo);
+                    imagenNegocio.agregar(img, idArt);
+                    MessageBox.Show("Agregado correctamente");
+                    Close();
+                }
+                else if(i == true)
+                {
+                    //idArt = articulo.Id;
 
-                idArt = articuloNegocio.agregar(articulo);
-                imagenNegocio.agregar(img, idArt);
-                MessageBox.Show("Agregado correctamente");
-                Close();
+                    articuloNegocio.Modificar(articulo);
+                    imagenNegocio.eliminar(articulo.Id);
+                    imagenNegocio.agregar(img, articulo.Id);
+                    MessageBox.Show("Modificado correctamente");
+                    Close();   
+                }                             
             }
             catch (Exception exception)
             {
@@ -54,8 +69,10 @@ namespace CatalogoWinForm
         {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             MarcaNegocio marcaNegocio = new MarcaNegocio();
+            ImagenNegocio imagenNegocio = new ImagenNegocio();  
             try
             {
+
                 cboCategoria.DataSource = categoriaNegocio.listar();
                 cboMarca.DataSource = marcaNegocio.listar();
 
@@ -72,7 +89,33 @@ namespace CatalogoWinForm
                     txtDescripcion.Text = articulo.Descripcion;
                     cboCategoria.SelectedValue = articulo.Categoria.ID;
                     //cboMarca.SelectedValue = articulo.Marca.ID;
+                    img = imagenNegocio.Imagenes(articulo);
+                    i = true;
+
+                    if (img.Count <= 0)
+                    {
+                        MessageBox.Show("Este articulo no tiene imagenes");
+                    }
+                    else
+                    {
+                        indice++;
+
+                        try
+                        {
+                            pbImgAgregar.Load(img[indice]);
+                        }
+                        catch (Exception)
+                        {
+                            indice = 0;                         
+                            btnNextImg_Click(sender, e);
+
+                        }
+
+                    }
+
                 }
+              
+
             }
             catch (Exception exception)
             {
@@ -81,61 +124,126 @@ namespace CatalogoWinForm
         }
         private void btnSubirImgAgregarArt_Click(object sender, EventArgs e)
         {
-            try
-            {
-                pbImgAgregar.Load(txtUrlImg.Text);
-                img.Add(txtUrlImg.Text);
-                indice = img.Count() - 1;
-                txtUrlImg.Text = "";
-            }
-            catch (Exception)
-            {
-                if (indice >= 0)
+            
+                try
                 {
-                    pbImgAgregar.Load(img[indice]);
+                    pbImgAgregar.Load(txtUrlImg.Text);
+                    img.Add(txtUrlImg.Text);
+                    indice = img.Count() - 1;
+                    txtUrlImg.Text = "";
                 }
-                else
+                catch (Exception)
                 {
-                    imgDefoult();
+                    if (indice >= 0)
+                    {
+                        pbImgAgregar.Load(img[indice]);
+                    }
+                    else
+                    {
+                        imgDefoult();
+                    }
+
+                    txtUrlImg.Text = "";
+                    MessageBox.Show("Imagen no encontrada");
                 }
-
-                txtUrlImg.Text = "";
-                MessageBox.Show("Imagen no encontrada");
-            }
-
+             
         }
 
         private void btnNextImg_Click(object sender, EventArgs e)
         {
-            try
+            if (i == false)
             {
-
-                if (indice < img.Count - 1)
+                try
                 {
-                    indice++;
-                    pbImgAgregar.Load(img[indice]);
+
+                    if (indice < img.Count - 1)
+                    {
+                        indice++;
+                        pbImgAgregar.Load(img[indice]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
             }
-            catch (Exception ex)
+            else if (i == true)
             {
-                throw ex;
+                try
+                {
+                    if (indice < img.Count - 1)
+                    {
+                        indice++;
+
+                        pbImgAgregar.Load(img[indice]);
+
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Imagen No disponible, comuniquese con el servicio tecnico");
+                    img.Remove(pbImgAgregar.ImageLocation);
+                    indice = 0;
+                    try
+                    {
+                        pbImgAgregar.Load(img[indice]);
+                    }
+                    catch (Exception)
+                    {
+
+                        imgDefoult();
+                    }
+
+
+                }
             }
         }
+        
 
         private void btnBeforeImg_Click(object sender, EventArgs e)
         {
-            try
+            if (i == false)
             {
-
-                if (indice > 0)
+                try
                 {
-                    indice--;
-                    pbImgAgregar.Load(img[indice]);
+
+                    if (indice > 0)
+                    {
+                        indice--;
+                        pbImgAgregar.Load(img[indice]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
             }
-            catch (Exception ex)
+            else if (i == true)
             {
-                throw ex;
+                try
+                {
+
+                    if (indice > 0)
+                    {
+                        indice--;
+                        pbImgAgregar.Load(img[indice]);
+                    }
+                }
+                catch (Exception)
+                {
+                    img.Remove(pbImgAgregar.ImageLocation);
+                    MessageBox.Show("Imagen No disponible, comuniquese con el servicio tecnico");
+                    indice = 0;
+                    try
+                    {
+                        pbImgAgregar.Load(img[indice]);
+                    }
+                    catch (Exception)
+                    {
+
+                        imgDefoult();
+                    }
+                }
             }
         }
 
