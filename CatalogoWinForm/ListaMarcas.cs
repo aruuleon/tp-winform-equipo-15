@@ -88,11 +88,11 @@ namespace CatalogoWinForm
             bool Usando = false;
             try
             {
-                accesoDatos.setearConsulta("SELECT IdCategoria FROM ARTICULOS");
+                accesoDatos.setearConsulta("SELECT IdMarca FROM ARTICULOS");
                 accesoDatos.ejecutarLectura();
                 while (accesoDatos.Lector.Read())
                 {
-                    listaUsados.Add((int)accesoDatos.Lector["IdCategoria"]);
+                    listaUsados.Add((int)accesoDatos.Lector["IdMarca"]);
                 }
                 foreach (int item in listaUsados)
                 {
