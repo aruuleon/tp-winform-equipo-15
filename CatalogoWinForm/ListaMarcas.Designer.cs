@@ -61,7 +61,7 @@
             this.btnModificarMarcas.Location = new System.Drawing.Point(334, 359);
             this.btnModificarMarcas.Name = "btnModificarMarcas";
             this.btnModificarMarcas.Size = new System.Drawing.Size(174, 45);
-            this.btnModificarMarcas.TabIndex = 1;
+            this.btnModificarMarcas.TabIndex = 2;
             this.btnModificarMarcas.Text = "MODIFICAR";
             this.btnModificarMarcas.UseVisualStyleBackColor = true;
             this.btnModificarMarcas.Click += new System.EventHandler(this.btnModificarMarcas_Click);
@@ -72,7 +72,7 @@
             this.btnEliminarMarca.Location = new System.Drawing.Point(545, 359);
             this.btnEliminarMarca.Name = "btnEliminarMarca";
             this.btnEliminarMarca.Size = new System.Drawing.Size(165, 45);
-            this.btnEliminarMarca.TabIndex = 2;
+            this.btnEliminarMarca.TabIndex = 3;
             this.btnEliminarMarca.Text = "ELIMINAR";
             this.btnEliminarMarca.UseVisualStyleBackColor = true;
             this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
@@ -84,7 +84,7 @@
             this.lblTituloMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloMarcas.Location = new System.Drawing.Point(351, 44);
             this.lblTituloMarcas.Name = "lblTituloMarcas";
-            this.lblTituloMarcas.Size = new System.Drawing.Size(130, 31);
+            this.lblTituloMarcas.Size = new System.Drawing.Size(102, 25);
             this.lblTituloMarcas.TabIndex = 3;
             this.lblTituloMarcas.Text = "MARCAS";
             this.lblTituloMarcas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -95,7 +95,7 @@
             this.tbBuscarMarcas.Location = new System.Drawing.Point(472, 102);
             this.tbBuscarMarcas.Name = "tbBuscarMarcas";
             this.tbBuscarMarcas.Size = new System.Drawing.Size(166, 20);
-            this.tbBuscarMarcas.TabIndex = 4;
+            this.tbBuscarMarcas.TabIndex = 5;
             this.tbBuscarMarcas.TextChanged += new System.EventHandler(this.tbBuscarMarcas_TextChanged);
             // 
             // btnBuscarMarcas
@@ -104,7 +104,7 @@
             this.btnBuscarMarcas.Location = new System.Drawing.Point(644, 97);
             this.btnBuscarMarcas.Name = "btnBuscarMarcas";
             this.btnBuscarMarcas.Size = new System.Drawing.Size(66, 28);
-            this.btnBuscarMarcas.TabIndex = 5;
+            this.btnBuscarMarcas.TabIndex = 4;
             this.btnBuscarMarcas.Text = "BUSCAR";
             this.btnBuscarMarcas.UseVisualStyleBackColor = true;
             this.btnBuscarMarcas.Click += new System.EventHandler(this.btnBuscarMarcas_Click);
@@ -115,7 +115,7 @@
             this.btnAgregarMarcas.Location = new System.Drawing.Point(108, 359);
             this.btnAgregarMarcas.Name = "btnAgregarMarcas";
             this.btnAgregarMarcas.Size = new System.Drawing.Size(174, 45);
-            this.btnAgregarMarcas.TabIndex = 13;
+            this.btnAgregarMarcas.TabIndex = 1;
             this.btnAgregarMarcas.Text = "AGREGAR";
             this.btnAgregarMarcas.UseVisualStyleBackColor = true;
             this.btnAgregarMarcas.Click += new System.EventHandler(this.btnAgregarMarcas_Click);
@@ -125,7 +125,7 @@
             this.btnVolver.Location = new System.Drawing.Point(2, 1);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(69, 25);
-            this.btnVolver.TabIndex = 14;
+            this.btnVolver.TabIndex = 6;
             this.btnVolver.Text = "<--";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolverCat_Click);

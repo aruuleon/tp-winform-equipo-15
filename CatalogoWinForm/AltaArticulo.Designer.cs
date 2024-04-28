@@ -78,6 +78,7 @@
             // 
             // cboCategoria
             // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(167, 125);
             this.cboCategoria.Name = "cboCategoria";
@@ -251,7 +252,8 @@
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(553, 655);
             this.MinimumSize = new System.Drawing.Size(553, 655);
             this.Name = "AltaArticulo";

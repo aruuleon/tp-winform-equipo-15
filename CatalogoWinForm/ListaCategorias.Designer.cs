@@ -44,7 +44,7 @@
             this.tbBuscarCategorias.Location = new System.Drawing.Point(463, 103);
             this.tbBuscarCategorias.Name = "tbBuscarCategorias";
             this.tbBuscarCategorias.Size = new System.Drawing.Size(238, 20);
-            this.tbBuscarCategorias.TabIndex = 10;
+            this.tbBuscarCategorias.TabIndex = 4;
             this.tbBuscarCategorias.TextChanged += new System.EventHandler(this.tbBuscarCategorias_TextChanged);
             // 
             // lblTituloCategorias
@@ -65,7 +65,7 @@
             this.btnEliminarCategorias.Location = new System.Drawing.Point(536, 360);
             this.btnEliminarCategorias.Name = "btnEliminarCategorias";
             this.btnEliminarCategorias.Size = new System.Drawing.Size(165, 45);
-            this.btnEliminarCategorias.TabIndex = 8;
+            this.btnEliminarCategorias.TabIndex = 3;
             this.btnEliminarCategorias.Text = "ELIMINAR";
             this.btnEliminarCategorias.UseVisualStyleBackColor = true;
             this.btnEliminarCategorias.Click += new System.EventHandler(this.btnEliminarCategorias_Click);
@@ -76,7 +76,7 @@
             this.btnModificarCategorias.Location = new System.Drawing.Point(316, 360);
             this.btnModificarCategorias.Name = "btnModificarCategorias";
             this.btnModificarCategorias.Size = new System.Drawing.Size(174, 45);
-            this.btnModificarCategorias.TabIndex = 7;
+            this.btnModificarCategorias.TabIndex = 2;
             this.btnModificarCategorias.Text = "MODIFICAR";
             this.btnModificarCategorias.UseVisualStyleBackColor = true;
             this.btnModificarCategorias.Click += new System.EventHandler(this.btnModificarCategorias_Click);
@@ -94,8 +94,7 @@
             this.dgvListaCategorias.Name = "dgvListaCategorias";
             this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaCategorias.Size = new System.Drawing.Size(602, 202);
-            this.dgvListaCategorias.TabIndex = 6;
-           
+            this.dgvListaCategorias.TabIndex = 0;
             // 
             // btnAgregarCategorias
             // 
@@ -103,7 +102,7 @@
             this.btnAgregarCategorias.Location = new System.Drawing.Point(99, 360);
             this.btnAgregarCategorias.Name = "btnAgregarCategorias";
             this.btnAgregarCategorias.Size = new System.Drawing.Size(174, 45);
-            this.btnAgregarCategorias.TabIndex = 12;
+            this.btnAgregarCategorias.TabIndex = 1;
             this.btnAgregarCategorias.Text = "AGREGAR";
             this.btnAgregarCategorias.UseVisualStyleBackColor = true;
             this.btnAgregarCategorias.Click += new System.EventHandler(this.btnAgregarCategorias_Click);
@@ -113,7 +112,7 @@
             this.btnVolverCat.Location = new System.Drawing.Point(3, 3);
             this.btnVolverCat.Name = "btnVolverCat";
             this.btnVolverCat.Size = new System.Drawing.Size(69, 25);
-            this.btnVolverCat.TabIndex = 13;
+            this.btnVolverCat.TabIndex = 5;
             this.btnVolverCat.Text = "<--";
             this.btnVolverCat.UseVisualStyleBackColor = true;
             this.btnVolverCat.Click += new System.EventHandler(this.btnVolverCat_Click);

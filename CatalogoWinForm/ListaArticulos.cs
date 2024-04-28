@@ -53,17 +53,28 @@ namespace CatalogoWinForm
 
         private void btnDetalle_MouseClick(object sender, MouseEventArgs e)
         {
-            Articulo articulo = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem; 
-            DetalleArticulo detalleArticulo = new DetalleArticulo(articulo);
-            detalleArticulo.ShowDialog();
+            if (dgvListaArticulos.CurrentRow != null)
+            {
+                Articulo articulo = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+
+                DetalleArticulo detalleArticulo = new DetalleArticulo(articulo);
+                detalleArticulo.ShowDialog();
+            }
+            else MessageBox.Show("Seleccione una columna");
         }
 
         private void btnModificarArticulo_Click(object sender, EventArgs e)
         {
-            Articulo articulo = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-            AltaArticulo modificarArticulo = new AltaArticulo(articulo);
-            modificarArticulo.ShowDialog();
-            Cargar();
+            if (dgvListaArticulos.CurrentRow != null)
+            {
+                Articulo articulo = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                AltaArticulo modificarArticulo = new AltaArticulo(articulo);
+                modificarArticulo.ShowDialog();
+                Cargar();
+            }
+            else MessageBox.Show("Seleccione una columna");
         }
+        
+        
     }
 }
