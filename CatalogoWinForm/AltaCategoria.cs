@@ -46,7 +46,7 @@ namespace CatalogoWinForm
                         
 
                     cate.Descripcion = tbAltaCategoria.Text;
-                    if (cate.ID != 0)
+                    if (cate.Id != 0)
                     {
                         negocio.modificar(cate);
                         MessageBox.Show("Modificado correctamente");

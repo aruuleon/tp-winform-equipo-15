@@ -41,6 +41,7 @@ namespace CatalogoWinForm
                 articulonuevo.Nombre = txtNombre.Text;
                 articulonuevo.Descripcion = txtDescripcion.Text;
                 articulonuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                articulonuevo.Marca = (Marca)cboMarca.SelectedItem;
                 articulonuevo.Precio = decimal.Parse(txtPrecio.Text);
                 if (i == false)
                 {
@@ -72,14 +73,13 @@ namespace CatalogoWinForm
             ImagenNegocio imagenNegocio = new ImagenNegocio();  
             try
             {
-
                 cboCategoria.DataSource = categoriaNegocio.listar();
-                cboMarca.DataSource = marcaNegocio.listar();
-
                 cboCategoria.ValueMember = "Id";
                 cboCategoria.DisplayMember = "Descripcion";
-                //cboMarca.ValueMember = "Id";
-                //cboMarca.DisplayMember = "Descripcion";
+
+                cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.ValueMember = "Id";
+                cboMarca.DisplayMember = "Descripcion";
 
                 if (articulo != null)
                 {
@@ -87,8 +87,8 @@ namespace CatalogoWinForm
                     txtNombre.Text = articulo.Nombre;
                     txtPrecio.Text = articulo.Precio.ToString();
                     txtDescripcion.Text = articulo.Descripcion;
-                    cboCategoria.SelectedValue = articulo.Categoria.ID;
-                    //cboMarca.SelectedValue = articulo.Marca.ID;
+                    cboCategoria.SelectedValue = articulo.Categoria.Id;
+                    cboMarca.SelectedValue = articulo.Marca.Id;
                     img = imagenNegocio.Imagenes(articulo);
                     i = true;
 
@@ -108,14 +108,9 @@ namespace CatalogoWinForm
                         {
                             indice = 0;                         
                             btnNextImg_Click(sender, e);
-
                         }
-
                     }
-
                 }
-              
-
             }
             catch (Exception exception)
             {
@@ -148,7 +143,6 @@ namespace CatalogoWinForm
                 }
              
         }
-
         private void btnNextImg_Click(object sender, EventArgs e)
         {
             if (i == false)
@@ -193,13 +187,9 @@ namespace CatalogoWinForm
 
                         imgDefoult();
                     }
-
-
                 }
             }
         }
-        
-
         private void btnBeforeImg_Click(object sender, EventArgs e)
         {
             if (i == false)
@@ -222,7 +212,6 @@ namespace CatalogoWinForm
             {
                 try
                 {
-
                     if (indice > 0)
                     {
                         indice--;
@@ -240,13 +229,11 @@ namespace CatalogoWinForm
                     }
                     catch (Exception)
                     {
-
                         imgDefoult();
                     }
                 }
             }
         }
-
         private void btnEliminarImg_Click(object sender, EventArgs e)
         {
             try
@@ -256,7 +243,6 @@ namespace CatalogoWinForm
                 {
                     indice--;
                 }
-
 
                 if (img.Count > 0)
                 {
@@ -268,7 +254,6 @@ namespace CatalogoWinForm
             }
             catch (Exception)
             {
-
                 MessageBox.Show("No hay imagenes para eliminar");
             }
 
@@ -277,16 +262,12 @@ namespace CatalogoWinForm
         {
             try
             {
-
                 pbImgAgregar.Load("https://th.bing.com/th/id/OIP.WeSkkwLXkUXbRcLJuN7I_gHaHa?rs=1&pid=ImgDetMain");
-
             }
             catch (Exception)
             {
-
                 MessageBox.Show("No funciona la defoult");
             }
-
         }
     }
 }

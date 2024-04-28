@@ -49,11 +49,9 @@ namespace negocio
                     datos.ejecutarAccion();
                     datos.cerrarConexion();
                 }
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

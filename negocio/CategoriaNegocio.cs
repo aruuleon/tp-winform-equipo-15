@@ -24,7 +24,7 @@ namespace negocio
                 while (accesoCategoria.Lector.Read())
                 {
                     Categoria aux = new Categoria();
-                    aux.ID = (int)accesoCategoria.Lector["Id"];
+                    aux.Id = (int)accesoCategoria.Lector["Id"];
 
                     if(!(accesoCategoria.Lector["Descripcion"] is DBNull))
                     aux.Descripcion = (string)accesoCategoria.Lector["Descripcion"];
@@ -68,7 +68,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("UPDATE CATEGORIAS SET Descripcion = '" + nueva.Descripcion + "' WHERE ID = " + nueva.ID );
+                datos.setearConsulta("UPDATE CATEGORIAS SET Descripcion = '" + nueva.Descripcion + "' WHERE ID = " + nueva.Id );
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

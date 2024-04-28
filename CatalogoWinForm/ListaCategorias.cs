@@ -84,9 +84,9 @@ namespace CatalogoWinForm
                 if (respuesta == DialogResult.Yes)
                 {
                     seleccionado = (Categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
-                    if (!(ComprobarEliminacion(seleccionado.ID)))
+                    if (!(ComprobarEliminacion(seleccionado.Id)))
                     {
-                        categoriaNegocio.eliminar(seleccionado.ID);
+                        categoriaNegocio.eliminar(seleccionado.Id);
                         MessageBox.Show("Eliminado correctamente");
                         Cargar();
                     }
@@ -143,8 +143,7 @@ namespace CatalogoWinForm
             string filtro = tbBuscarCategorias.Text;
             if (filtro != "")
             {
-                listafiltrada = listaCategoria.FindAll(x => x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.ID.ToString() == filtro);
-
+                listafiltrada = listaCategoria.FindAll(x => x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.Id.ToString() == filtro);
             }
             else
             {
@@ -161,6 +160,5 @@ namespace CatalogoWinForm
                 btnEliminarCategorias.Enabled = false;
             }
         }
-
-           }
+    }
 }

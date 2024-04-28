@@ -243,7 +243,7 @@
             this.MinimumSize = new System.Drawing.Size(553, 588);
             this.Name = "DetalleArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Detalles de Articulo";
+            this.Text = "Detalle de Articulo";
             this.Load += new System.EventHandler(this.DetalleArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxCuadroImagen)).EndInit();
             this.ResumeLayout(false);

@@ -23,9 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.cboMarca = new System.Windows.Forms.ComboBox();
-            this.cboCategoria = new System.Windows.Forms.ComboBox();
-            this.txbBuscar = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnModificarArticulo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -37,33 +35,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             this.SuspendLayout();
             // 
-            // cboMarca
+            // txtBuscar
             // 
-            this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(99, 94);
-            this.cboMarca.Margin = new System.Windows.Forms.Padding(2);
-            this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(104, 21);
-            this.cboMarca.TabIndex = 8;
-            this.cboMarca.Text = "Filtro por Marca..";
-            // 
-            // cboCategoria
-            // 
-            this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(224, 94);
-            this.cboCategoria.Margin = new System.Windows.Forms.Padding(2);
-            this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(114, 21);
-            this.cboCategoria.TabIndex = 7;
-            this.cboCategoria.Text = "Filtro por Categoria";
-            // 
-            // txbBuscar
-            // 
-            this.txbBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbBuscar.Location = new System.Drawing.Point(432, 96);
-            this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(188, 20);
-            this.txbBuscar.TabIndex = 6;
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscar.Location = new System.Drawing.Point(432, 96);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(188, 20);
+            this.txtBuscar.TabIndex = 6;
             // 
             // btnBuscar
             // 
@@ -74,6 +52,7 @@
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnModificarArticulo
             // 
@@ -169,9 +148,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificarArticulo);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txbBuscar);
-            this.Controls.Add(this.cboCategoria);
-            this.Controls.Add(this.cboMarca);
+            this.Controls.Add(this.txtBuscar);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(812, 474);
             this.Name = "ListaArticulos";
@@ -186,10 +163,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cboMarca;
-        private System.Windows.Forms.ComboBox cboCategoria;
-        private System.Windows.Forms.TextBox txbBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnModificarArticulo;
         private System.Windows.Forms.Button btnEliminar;
