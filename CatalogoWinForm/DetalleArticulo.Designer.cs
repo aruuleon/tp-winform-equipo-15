@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleArticulo));
             this.lblTituloDetalles = new System.Windows.Forms.Label();
             this.lblNombreDetallesTitulo = new System.Windows.Forms.Label();
             this.lblCategoriaDetallesTitulo = new System.Windows.Forms.Label();
@@ -36,7 +35,7 @@
             this.lblDescripcionDetallesTitulo = new System.Windows.Forms.Label();
             this.lblCodigoDetallesTitulo = new System.Windows.Forms.Label();
             this.lblImgDetallesTitulo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxCuadroImagen = new System.Windows.Forms.PictureBox();
             this.btnNextImgDetalles = new System.Windows.Forms.Button();
             this.btnBeforeImgDetalles = new System.Windows.Forms.Button();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -46,7 +45,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblPrecioDetallesTitulo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCuadroImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloDetalles
@@ -119,15 +118,14 @@
             this.lblImgDetallesTitulo.TabIndex = 7;
             this.lblImgDetallesTitulo.Text = "IMAGENES:";
             // 
-            // pictureBox1
+            // pbxCuadroImagen
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(109, 346);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(307, 169);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.pbxCuadroImagen.Location = new System.Drawing.Point(109, 346);
+            this.pbxCuadroImagen.Name = "pbxCuadroImagen";
+            this.pbxCuadroImagen.Size = new System.Drawing.Size(307, 169);
+            this.pbxCuadroImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCuadroImagen.TabIndex = 8;
+            this.pbxCuadroImagen.TabStop = false;
             // 
             // btnNextImgDetalles
             // 
@@ -137,6 +135,7 @@
             this.btnNextImgDetalles.TabIndex = 9;
             this.btnNextImgDetalles.Text = ">";
             this.btnNextImgDetalles.UseVisualStyleBackColor = true;
+            this.btnNextImgDetalles.Click += new System.EventHandler(this.btnNextImgDetalles_Click);
             // 
             // btnBeforeImgDetalles
             // 
@@ -146,6 +145,7 @@
             this.btnBeforeImgDetalles.TabIndex = 10;
             this.btnBeforeImgDetalles.Text = "<";
             this.btnBeforeImgDetalles.UseVisualStyleBackColor = true;
+            this.btnBeforeImgDetalles.Click += new System.EventHandler(this.btnBeforeImgDetalles_Click);
             // 
             // lblCategoria
             // 
@@ -231,7 +231,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnBeforeImgDetalles);
             this.Controls.Add(this.btnNextImgDetalles);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxCuadroImagen);
             this.Controls.Add(this.lblImgDetallesTitulo);
             this.Controls.Add(this.lblCodigoDetallesTitulo);
             this.Controls.Add(this.lblDescripcionDetallesTitulo);
@@ -245,7 +245,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles de Articulo";
             this.Load += new System.EventHandler(this.DetalleArticulo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCuadroImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +260,7 @@
         private System.Windows.Forms.Label lblDescripcionDetallesTitulo;
         private System.Windows.Forms.Label lblCodigoDetallesTitulo;
         private System.Windows.Forms.Label lblImgDetallesTitulo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxCuadroImagen;
         private System.Windows.Forms.Button btnNextImgDetalles;
         private System.Windows.Forms.Button btnBeforeImgDetalles;
         private System.Windows.Forms.Label lblCategoria;
