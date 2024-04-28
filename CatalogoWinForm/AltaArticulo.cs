@@ -33,15 +33,15 @@ namespace CatalogoWinForm
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             ImagenNegocio imagenNegocio = new negocio.ImagenNegocio();
-            Articulo articulo = new Articulo();
+            Articulo articulonuevo = new Articulo();
             try
             {
-               
-                articulo.Codigo = txtCodigo.Text;
-                articulo.Nombre = txtNombre.Text;
-                articulo.Descripcion = txtDescripcion.Text;
-                articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
-                articulo.Precio = decimal.Parse(txtPrecio.Text);
+
+                articulonuevo.Codigo = txtCodigo.Text;
+                articulonuevo.Nombre = txtNombre.Text;
+                articulonuevo.Descripcion = txtDescripcion.Text;
+                articulonuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                articulonuevo.Precio = decimal.Parse(txtPrecio.Text);
                 if (i == false)
                 {
                     idArt = articuloNegocio.agregar(articulo);
@@ -51,10 +51,10 @@ namespace CatalogoWinForm
                 }
                 else if(i == true)
                 {
-                    //idArt = articulo.Id;
-
-                    articuloNegocio.Modificar(articulo);
-                    imagenNegocio.eliminar(articulo.Id);
+                    
+                    articulonuevo.Id = articulo.Id;
+                    articuloNegocio.Modificar(articulonuevo);
+                    imagenNegocio.eliminar(articulonuevo.Id);
                     imagenNegocio.agregar(img, articulo.Id);
                     MessageBox.Show("Modificado correctamente");
                     Close();   
