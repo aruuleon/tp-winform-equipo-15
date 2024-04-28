@@ -53,10 +53,11 @@ namespace CatalogoWinForm
         private void AltaArticulo_Load(object sender, EventArgs e)
         {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
             try
             {
                 cboCategoria.DataSource = categoriaNegocio.listar();
-                //cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.DataSource = marcaNegocio.listar();
 
                 cboCategoria.ValueMember = "Id";
                 cboCategoria.DisplayMember = "Descripcion";

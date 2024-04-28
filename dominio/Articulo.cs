@@ -16,6 +16,6 @@ namespace dominio
         public SqlMoney Precio { get; set; }
         public Categoria Categoria { get; set; }
 
-        //public Marca Marca { get; set; }
+        public Marca Marca { get; set; }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CatalogoWinForm
 {
@@ -24,14 +25,17 @@ namespace CatalogoWinForm
         private void Cargar()
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
             try
             {
                 listaArticulos = articuloNegocio.listar();
                 dgvListaArticulos.DataSource = listaArticulos;
                 ocultarColumnas();
-            }
-            catch (Exception)
+
+                cboCategoria.DataSource = categoriaNegocio.listar();
+                cboMarca.DataSource = marcaNegocio.listar();
+            } catch (Exception)
             {
                 MessageBox.Show("Ocurrio un error al cargar los datos, comuniquese con el servicio tecnico");
             }
@@ -74,7 +78,16 @@ namespace CatalogoWinForm
             }
             else MessageBox.Show("Seleccione una columna");
         }
-        
-        
+
+        private void btnEliminar_Click(object sender, EventArgs e) {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            try {
+                Articulo articulo = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                articuloNegocio.eliminar(articulo.Codigo);
+                Cargar();
+            } catch (Exception exception) {
+                MessageBox.Show(exception.ToString());
+            }
+        }
     }
 }

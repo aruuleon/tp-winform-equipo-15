@@ -16,20 +16,19 @@ namespace negocio
             try
             {
                 accesoDatos.setearConsulta(
-                    "SELECT  Codigo, Nombre, A.Descripcion, C.Descripcion, Precio, A.Id AS IdArt " +
-                    "FROM ARTICULOS A INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id"
+                 "SELECT  Codigo, Nombre, A.Descripcion, C.Descripcion AS Cdes, Precio, A.Id AS IdArt " +
+                 "FROM ARTICULOS A INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id"
                 );
                 accesoDatos.ejecutarLectura();
-                while (accesoDatos.Lector.Read())
-                {
+                while (accesoDatos.Lector.Read()) {
                     Articulo articulo = new Articulo();
 
-                    //articulo.Id = (int)accesoDatos.Lector["Id"];
+                    articulo.Id = (int)accesoDatos.Lector["IdArt"];
                     articulo.Codigo = (string)accesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
                     articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
                     articulo.Categoria = new Categoria();
-                    articulo.Categoria.Descripcion = (string)accesoDatos.Lector["Descripcion"];
+                    articulo.Categoria.Descripcion = (string)accesoDatos.Lector["Cdes"];
                     articulo.Precio = accesoDatos.Lector.GetDecimal(4);
                     //articulo.Marca = new Marca();
                     //articulo.Marca.Descripcion = (string)accesoDatos.Lector["IdMarca"];
@@ -73,38 +72,13 @@ namespace negocio
                 accesoDatos.cerrarConexion();
             }
         }
-        public Articulo buscar(string codigo)
-        {
-            Articulo articulo = new Articulo();
-            try
-            {
-                accesoDatos.setearConsulta(
-                    "SELECT Codigo, Nombre, Descripcion, IdCategoria, Precio FROM ARTICULOS " +
-                    "WHERE Codigo = '" + codigo + "'"
-                );
+        public void eliminar(string codigo) {
+            try {
+                accesoDatos.setearConsulta("DELETE FROM ARTICULOS WHERE Codigo = @Codigo");
+                accesoDatos.setearParametros("@Codigo", codigo);
                 accesoDatos.ejecutarAccion();
-                while (accesoDatos.Lector.Read())
-                {
-                    //articulo.Id = (int)accesoDatos.Lector["Id"];
-                    articulo.Codigo = (string)accesoDatos.Lector["Codigo"];
-                    articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
-                    articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
-                    articulo.Categoria = new Categoria();
-                    articulo.Categoria.ID = (int)accesoDatos.Lector["IdCategoria"];
-                    articulo.Categoria.Descripcion = (string)accesoDatos.Lector["Descripcion"];
-                    articulo.Precio = accesoDatos.Lector.GetDecimal(4);
-                    //articulo.Marca = new Marca();
-                    //articulo.Marca.Descripcion = (string)accesoDatos.Lector["IdMarca"];
-                }
-                return articulo;
-            }
-            catch (Exception exception)
-            {
+            } catch (Exception exception) {
                 throw exception;
-            }
-            finally
-            {
-                accesoDatos.cerrarConexion();
             }
         }
     }
