@@ -21,7 +21,7 @@ namespace CatalogoWinForm
             InitializeComponent();
 
         }
-      
+
         private void Cargar()
         {
 
@@ -67,7 +67,7 @@ namespace CatalogoWinForm
         {
             try
             {
-               Marca seleccionado;
+                Marca seleccionado;
 
                 seleccionado = (Marca)dgvListaMarcas.CurrentRow.DataBoundItem;
 
@@ -115,8 +115,8 @@ namespace CatalogoWinForm
 
         private void btnEliminarMarca_Click(object sender, EventArgs e)
         {
-           MarcaNegocio marcaNegocio = new MarcaNegocio();
-         Marca seleccionado;
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            Marca seleccionado;
 
             try
             {
@@ -147,7 +147,7 @@ namespace CatalogoWinForm
         private void btnBuscarMarcas_Click(object sender, EventArgs e)
         {
             string descripcion = tbBuscarMarcas.Text;
-            List<Marca> listaAux  = new List<Marca>(); ;
+            List<Marca> listaAux = new List<Marca>(); ;
             try
             {
                 if (!(descripcion == ""))
@@ -164,27 +164,35 @@ namespace CatalogoWinForm
 
                     }
                     dgvListaMarcas.DataSource = listaAux;
+                    btnModificarMarcas.Enabled = true;
+                    btnEliminarMarca.Enabled = true;
                     if (listaAux.Count <= 0)
                     {
                         btnModificarMarcas.Enabled = false;
                         btnEliminarMarca.Enabled = false;
                     }
                 }
-              
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-        
+
         }
 
         private void tbBuscarMarcas_TextChanged(object sender, EventArgs e)
         {
             string texto = tbBuscarMarcas.Text;
 
-            if (texto=="") dgvListaMarcas.DataSource = listaMarca;
+            if (texto == "")
+            {
+                dgvListaMarcas.DataSource = listaMarca;
+                btnModificarMarcas.Enabled = true;
+                btnEliminarMarca.Enabled = true;
+            }
+
         }
     }
 }

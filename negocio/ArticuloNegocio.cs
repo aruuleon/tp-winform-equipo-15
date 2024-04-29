@@ -16,14 +16,14 @@ namespace negocio
             try
             {
                 accesoDatos.setearConsulta(
-                 "SELECT Codigo, Nombre, A.Descripcion, C.Descripcion AS CDescripcion, M.Descripcion AS MDescripcion, Precio, A.IdCategoria AS ICategoria, A.IdMarca AS IMarca " +
+                 "SELECT Codigo, Nombre, A.Descripcion, C.Descripcion AS CDescripcion, M.Descripcion AS MDescripcion, Precio, A.IdCategoria AS ICategoria, A.IdMarca AS IMarca, A.Id AS IdArt " +
                  "FROM ARTICULOS A INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN MARCAS M ON A.IdMarca = M.Id"
                 );
                 accesoDatos.ejecutarLectura();
                 while (accesoDatos.Lector.Read()) {
                     Articulo articulo = new Articulo();
 
-                    //articulo.Id = (int)accesoDatos.Lector["IdArt"];
+                    articulo.Id = (int)accesoDatos.Lector["IdArt"];
                     articulo.Codigo = (string)accesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
                     articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];

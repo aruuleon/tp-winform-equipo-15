@@ -49,6 +49,10 @@ namespace CatalogoWinForm
             if (validarNumeros(txtPrecio.Text)) {
                 MessageBox.Show("El Precio no debe contener letras.");
                 return true;
+            } 
+            if (txtPrecio.Text.Length <= 0) {
+                MessageBox.Show("Por favor, ingrese un Precio ");
+                return true;
             }
             return false;
         }
@@ -65,13 +69,16 @@ namespace CatalogoWinForm
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             ImagenNegocio imagenNegocio = new ImagenNegocio();
-            //Articulo articulonuevo = new Articulo();
+            Articulo articulonuevo = new Articulo();
             try
             {
-                if(validarFiltro()) {
+                if (validarFiltro())
+                {
                     return;
-                } else {
-                    if (articulo == null) {
+                }
+                else
+                {
+                    /*if (articulo == null) {
                         articulo = new Articulo();
                         articulo.Codigo = txtCodigo.Text;
                         articulo.Nombre = txtNombre.Text;
@@ -89,29 +96,31 @@ namespace CatalogoWinForm
                         imagenNegocio.agregar(img, articulo.Id);
                         MessageBox.Show("Modificado correctamente");
                         Close();
+                    }*/
+                    articulonuevo.Codigo = txtCodigo.Text;
+                    articulonuevo.Nombre = txtNombre.Text;
+                    articulonuevo.Descripcion = txtDescripcion.Text;
+                    articulonuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                    articulonuevo.Marca = (Marca)cboMarca.SelectedItem;
+                    articulonuevo.Precio = decimal.Parse(txtPrecio.Text);
+                    if (i == false)
+                    {
+                        idArt = articuloNegocio.agregar(articulonuevo);
+                        imagenNegocio.agregar(img, idArt);
+                        MessageBox.Show("Agregado correctamente");
+                        Close();
                     }
-                    //articulonuevo.Codigo = txtCodigo.Text;
-                    //articulonuevo.Nombre = txtNombre.Text;
-                    //articulonuevo.Descripcion = txtDescripcion.Text;
-                    //articulonuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
-                    //articulonuevo.Marca = (Marca)cboMarca.SelectedItem;
-                    //articulonuevo.Precio = decimal.Parse(txtPrecio.Text);
-                    //if (i == false)
-                    //{
-                    //    idArt = articuloNegocio.agregar(articulo);
-                    //    imagenNegocio.agregar(img, idArt);
-                    //    MessageBox.Show("Agregado correctamente");
-                    //    Close();
-                    //}
-                    //else if (i == true) {
-                    //    articulonuevo.Id = articulo.Id;
-                    //    articuloNegocio.Modificar(articulonuevo);
-                    //    imagenNegocio.eliminar(articulonuevo.Id);
-                    //    imagenNegocio.agregar(img, articulo.Id);
-                    //    MessageBox.Show("Modificado correctamente");
-                    //    Close();
-                    //}
+                    else if (i == true)
+                    {
+                        articulonuevo.Id = articulo.Id;
+                        articuloNegocio.Modificar(articulonuevo);
+                        imagenNegocio.eliminar(articulonuevo.Id);
+                        imagenNegocio.agregar(img, articulo.Id);
+                        MessageBox.Show("Modificado correctamente");
+                        Close();
+                    }
                 }
+                
             }
             catch (Exception exception)
             {
@@ -294,17 +303,15 @@ namespace CatalogoWinForm
             try
             {
                 img.Remove(pbImgAgregar.ImageLocation);
-                if (indice > 0)
-                {
-                    indice--;
-                }
-
-                if (img.Count > 0)
+                indice=0;
+                try
                 {
                     pbImgAgregar.Load(img[indice]);
                 }
-                else imgDefoult();
-
+                catch (Exception)
+                {
+                    imgDefoult();
+                }
 
             }
             catch (Exception)
