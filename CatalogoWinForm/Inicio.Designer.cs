@@ -35,7 +35,7 @@
             this.btnIncioArticulos.Location = new System.Drawing.Point(281, 242);
             this.btnIncioArticulos.Name = "btnIncioArticulos";
             this.btnIncioArticulos.Size = new System.Drawing.Size(245, 103);
-            this.btnIncioArticulos.TabIndex = 15;
+            this.btnIncioArticulos.TabIndex = 1;
             this.btnIncioArticulos.Text = "ARTICULOS";
             this.btnIncioArticulos.UseVisualStyleBackColor = true;
             this.btnIncioArticulos.Click += new System.EventHandler(this.btnIncioArticulos_Click);
@@ -46,7 +46,7 @@
             this.btnIncioMarcas.Location = new System.Drawing.Point(26, 242);
             this.btnIncioMarcas.Name = "btnIncioMarcas";
             this.btnIncioMarcas.Size = new System.Drawing.Size(197, 103);
-            this.btnIncioMarcas.TabIndex = 16;
+            this.btnIncioMarcas.TabIndex = 0;
             this.btnIncioMarcas.Text = "MARCAS";
             this.btnIncioMarcas.UseVisualStyleBackColor = true;
             this.btnIncioMarcas.Click += new System.EventHandler(this.btnIncioMarcas_Click);
@@ -57,7 +57,7 @@
             this.btnCategorias.Location = new System.Drawing.Point(587, 242);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Size = new System.Drawing.Size(201, 103);
-            this.btnCategorias.TabIndex = 17;
+            this.btnCategorias.TabIndex = 2;
             this.btnCategorias.Text = "CATEGORIAS";
             this.btnCategorias.UseVisualStyleBackColor = true;
             this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);

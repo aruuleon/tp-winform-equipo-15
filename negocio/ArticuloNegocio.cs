@@ -53,14 +53,15 @@ namespace negocio
             try
             {
                 accesoDatos.setearConsulta(
-                    "INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdCategoria, Precio) " +
+                    "INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdCategoria, IdMarca, Precio) " +
                     "OUTPUT INSERTED.ID " +
-                    "VALUES (@Codigo, @Nombre, @Descripcion, @IdCategoria, @Precio)"
+                    "VALUES (@Codigo, @Nombre, @Descripcion, @IdCategoria, @IdMarca, @Precio)"
                 );
                 accesoDatos.setearParametros("@Codigo", articulo.Codigo);
                 accesoDatos.setearParametros("@Nombre", articulo.Nombre);
                 accesoDatos.setearParametros("@Descripcion", articulo.Descripcion);
                 accesoDatos.setearParametros("@IdCategoria", articulo.Categoria.Id);
+                accesoDatos.setearParametros("@IdMarca", articulo.Marca.Id);
                 accesoDatos.setearParametros("@Precio", articulo.Precio);
                 idArt = accesoDatos.ejecutarScalar();
                 return idArt;

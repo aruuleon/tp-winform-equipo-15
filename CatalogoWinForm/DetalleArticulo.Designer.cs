@@ -132,7 +132,7 @@
             this.btnNextImgDetalles.Location = new System.Drawing.Point(421, 418);
             this.btnNextImgDetalles.Name = "btnNextImgDetalles";
             this.btnNextImgDetalles.Size = new System.Drawing.Size(29, 34);
-            this.btnNextImgDetalles.TabIndex = 9;
+            this.btnNextImgDetalles.TabIndex = 0;
             this.btnNextImgDetalles.Text = ">";
             this.btnNextImgDetalles.UseVisualStyleBackColor = true;
             this.btnNextImgDetalles.Click += new System.EventHandler(this.btnNextImgDetalles_Click);

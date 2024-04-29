@@ -29,37 +29,89 @@ namespace CatalogoWinForm
             this.articulo = articulo;
             i = true;
         }
+        private bool validarFiltro() {
+            if (string.IsNullOrEmpty(txtNombre.Text)) {
+                MessageBox.Show("Por favor, ingrese un Nombre.");
+                return true;
+            }
+            if (string.IsNullOrEmpty(txtCodigo.Text)) {
+                MessageBox.Show("Por favor, ingrese un Codigo.");
+                return true;
+            }
+            if (cboCategoria.SelectedIndex < 0) {
+                MessageBox.Show("Por favor, seleccione una Categoría.");
+                return true;
+            }
+            if(cboMarca.SelectedIndex < 0) {
+                MessageBox.Show("Por favor, seleccione una Marca.");
+                return true;
+            }
+            if (validarNumeros(txtPrecio.Text)) {
+                MessageBox.Show("El Precio no debe contener letras.");
+                return true;
+            }
+            return false;
+        }
+        private bool validarNumeros(string cadena) {
+            bool necesitaValidacion = false;
+            foreach (var caracter in cadena) {
+                if(!char.IsNumber(caracter)) {
+                    return true;
+                }
+            }
+            return necesitaValidacion;
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-            ImagenNegocio imagenNegocio = new negocio.ImagenNegocio();
-            Articulo articulonuevo = new Articulo();
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+            //Articulo articulonuevo = new Articulo();
             try
             {
-
-                articulonuevo.Codigo = txtCodigo.Text;
-                articulonuevo.Nombre = txtNombre.Text;
-                articulonuevo.Descripcion = txtDescripcion.Text;
-                articulonuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
-                articulonuevo.Marca = (Marca)cboMarca.SelectedItem;
-                articulonuevo.Precio = decimal.Parse(txtPrecio.Text);
-                if (i == false)
-                {
-                    idArt = articuloNegocio.agregar(articulo);
-                    imagenNegocio.agregar(img, idArt);
-                    MessageBox.Show("Agregado correctamente");
-                    Close();
+                if(validarFiltro()) {
+                    return;
+                } else {
+                    if (articulo == null) {
+                        articulo = new Articulo();
+                        articulo.Codigo = txtCodigo.Text;
+                        articulo.Nombre = txtNombre.Text;
+                        articulo.Descripcion = txtDescripcion.Text;
+                        articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                        articulo.Marca = (Marca)cboMarca.SelectedItem;
+                        articulo.Precio = decimal.Parse(txtPrecio.Text);
+                        idArt = articuloNegocio.agregar(articulo);
+                        imagenNegocio.agregar(img, idArt);
+                        MessageBox.Show("Agregado correctamente");
+                        Close();
+                    } else {
+                        articuloNegocio.Modificar(articulo);
+                        imagenNegocio.eliminar(articulo.Id);
+                        imagenNegocio.agregar(img, articulo.Id);
+                        MessageBox.Show("Modificado correctamente");
+                        Close();
+                    }
+                    //articulonuevo.Codigo = txtCodigo.Text;
+                    //articulonuevo.Nombre = txtNombre.Text;
+                    //articulonuevo.Descripcion = txtDescripcion.Text;
+                    //articulonuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                    //articulonuevo.Marca = (Marca)cboMarca.SelectedItem;
+                    //articulonuevo.Precio = decimal.Parse(txtPrecio.Text);
+                    //if (i == false)
+                    //{
+                    //    idArt = articuloNegocio.agregar(articulo);
+                    //    imagenNegocio.agregar(img, idArt);
+                    //    MessageBox.Show("Agregado correctamente");
+                    //    Close();
+                    //}
+                    //else if (i == true) {
+                    //    articulonuevo.Id = articulo.Id;
+                    //    articuloNegocio.Modificar(articulonuevo);
+                    //    imagenNegocio.eliminar(articulonuevo.Id);
+                    //    imagenNegocio.agregar(img, articulo.Id);
+                    //    MessageBox.Show("Modificado correctamente");
+                    //    Close();
+                    //}
                 }
-                else if(i == true)
-                {
-                    
-                    articulonuevo.Id = articulo.Id;
-                    articuloNegocio.Modificar(articulonuevo);
-                    imagenNegocio.eliminar(articulonuevo.Id);
-                    imagenNegocio.agregar(img, articulo.Id);
-                    MessageBox.Show("Modificado correctamente");
-                    Close();   
-                }                             
             }
             catch (Exception exception)
             {
@@ -110,6 +162,9 @@ namespace CatalogoWinForm
                             btnNextImg_Click(sender, e);
                         }
                     }
+                } else {
+                    cboCategoria.SelectedIndex = -1;
+                    cboMarca.SelectedIndex = -1;
                 }
             }
             catch (Exception exception)

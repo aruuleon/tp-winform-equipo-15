@@ -75,16 +75,20 @@ namespace CatalogoWinForm
         }
 
         private void btnEliminar_Click(object sender, EventArgs e) {
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-            try {
-                DialogResult dialogResult = MessageBox.Show("¿Está seguro que quiere eliminar el artículo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialogResult == DialogResult.Yes) {
-                    Articulo articulo = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-                    articuloNegocio.eliminar(articulo.Codigo);
-                    Cargar();
+            if(dgvListaArticulos.CurrentRow != null) {
+                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                try {
+                    DialogResult dialogResult = MessageBox.Show("¿Está seguro que quiere eliminar el artículo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dialogResult == DialogResult.Yes) {
+                        Articulo articulo = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                        articuloNegocio.eliminar(articulo.Codigo);
+                        Cargar();
+                    }
+                } catch (Exception exception) {
+                    MessageBox.Show(exception.ToString());
                 }
-            } catch (Exception exception) {
-                MessageBox.Show(exception.ToString());
+            } else {
+                MessageBox.Show("Seleccione una columna");
             }
         }
 

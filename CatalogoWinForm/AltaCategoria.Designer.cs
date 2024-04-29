@@ -40,14 +40,14 @@
             this.tbAltaCategoria.Location = new System.Drawing.Point(283, 108);
             this.tbAltaCategoria.Name = "tbAltaCategoria";
             this.tbAltaCategoria.Size = new System.Drawing.Size(250, 20);
-            this.tbAltaCategoria.TabIndex = 9;
+            this.tbAltaCategoria.TabIndex = 0;
             // 
             // btnAgregarCategoria
             // 
             this.btnAgregarCategoria.Location = new System.Drawing.Point(550, 102);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
             this.btnAgregarCategoria.Size = new System.Drawing.Size(160, 31);
-            this.btnAgregarCategoria.TabIndex = 8;
+            this.btnAgregarCategoria.TabIndex = 1;
             this.btnAgregarCategoria.Text = "AGREGAR";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
             this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
@@ -78,7 +78,7 @@
             this.btnCancelarAlta.Location = new System.Drawing.Point(693, 182);
             this.btnCancelarAlta.Name = "btnCancelarAlta";
             this.btnCancelarAlta.Size = new System.Drawing.Size(95, 22);
-            this.btnCancelarAlta.TabIndex = 11;
+            this.btnCancelarAlta.TabIndex = 2;
             this.btnCancelarAlta.Text = "Cancelar";
             this.btnCancelarAlta.UseVisualStyleBackColor = true;
             this.btnCancelarAlta.Click += new System.EventHandler(this.btnCancelarAlta_Click);

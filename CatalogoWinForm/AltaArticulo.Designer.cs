@@ -65,7 +65,7 @@
             this.txtNombre.Location = new System.Drawing.Point(167, 34);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(241, 20);
-            this.txtNombre.TabIndex = 13;
+            this.txtNombre.TabIndex = 0;
             // 
             // lblCategoria
             // 
@@ -83,7 +83,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(167, 125);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(241, 21);
-            this.cboCategoria.TabIndex = 17;
+            this.cboCategoria.TabIndex = 2;
             // 
             // lblMarca
             // 
@@ -101,7 +101,7 @@
             this.cboMarca.Location = new System.Drawing.Point(167, 172);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(241, 21);
-            this.cboMarca.TabIndex = 19;
+            this.cboMarca.TabIndex = 3;
             // 
             // lblPrecio
             // 
@@ -117,14 +117,14 @@
             this.txtPrecio.Location = new System.Drawing.Point(167, 224);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(241, 20);
-            this.txtPrecio.TabIndex = 23;
+            this.txtPrecio.TabIndex = 4;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(195, 564);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(182, 34);
-            this.btnAgregar.TabIndex = 24;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -134,7 +134,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(167, 276);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(241, 20);
-            this.txtDescripcion.TabIndex = 26;
+            this.txtDescripcion.TabIndex = 5;
             // 
             // lblDescripcion
             // 
@@ -160,7 +160,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(167, 79);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(241, 20);
-            this.txtCodigo.TabIndex = 41;
+            this.txtCodigo.TabIndex = 1;
             // 
             // label1
             // 
@@ -217,7 +217,7 @@
             this.txtUrlImg.Location = new System.Drawing.Point(167, 333);
             this.txtUrlImg.Name = "txtUrlImg";
             this.txtUrlImg.Size = new System.Drawing.Size(241, 20);
-            this.txtUrlImg.TabIndex = 46;
+            this.txtUrlImg.TabIndex = 6;
             // 
             // label2
             // 

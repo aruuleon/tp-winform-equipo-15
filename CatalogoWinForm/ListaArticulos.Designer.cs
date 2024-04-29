@@ -41,7 +41,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(432, 96);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(188, 20);
-            this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.TabIndex = 1;
             // 
             // btnBuscar
             // 
@@ -49,7 +49,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(626, 94);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -60,7 +60,7 @@
             this.btnModificarArticulo.Location = new System.Drawing.Point(266, 381);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(132, 37);
-            this.btnModificarArticulo.TabIndex = 2;
+            this.btnModificarArticulo.TabIndex = 5;
             this.btnModificarArticulo.Text = "MODIFICAR";
             this.btnModificarArticulo.UseVisualStyleBackColor = true;
             this.btnModificarArticulo.Click += new System.EventHandler(this.btnModificarArticulo_Click);
@@ -71,7 +71,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(569, 381);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(132, 37);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -82,7 +82,7 @@
             this.btnDetalle.Location = new System.Drawing.Point(419, 381);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(132, 37);
-            this.btnDetalle.TabIndex = 3;
+            this.btnDetalle.TabIndex = 6;
             this.btnDetalle.Text = "VER DETALLE";
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDetalle_MouseClick);
@@ -112,7 +112,7 @@
             this.dgvListaArticulos.RowHeadersWidth = 62;
             this.dgvListaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaArticulos.Size = new System.Drawing.Size(602, 215);
-            this.dgvListaArticulos.TabIndex = 0;
+            this.dgvListaArticulos.TabIndex = 3;
             // 
             // btnAgregarArticulo
             // 
@@ -120,7 +120,7 @@
             this.btnAgregarArticulo.Location = new System.Drawing.Point(99, 381);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(132, 37);
-            this.btnAgregarArticulo.TabIndex = 1;
+            this.btnAgregarArticulo.TabIndex = 4;
             this.btnAgregarArticulo.Text = "AGREGAR";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
             this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
@@ -130,7 +130,7 @@
             this.btnVolver.Location = new System.Drawing.Point(2, 3);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(69, 25);
-            this.btnVolver.TabIndex = 9;
+            this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "<--";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
