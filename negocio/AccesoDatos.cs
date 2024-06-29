@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 
-namespace negocio
+namespace Negocio
 {
     public class AccesoDatos
     {
@@ -16,7 +16,7 @@ namespace negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=Plataforma_Cursos_TPC; integrated security=true");
             comando = new SqlCommand();
         }
         public void setearConsulta(string consulta)
@@ -39,13 +39,14 @@ namespace negocio
                 throw ex;
             }
         }
-        public void ejecutarAccion()
+        public bool ejecutarAccion()
         {
             comando.Connection = conexion;
             try
             {
                 conexion.Open();
-                comando.ExecuteNonQuery();                
+                int rowsAffected = comando.ExecuteNonQuery();
+                return rowsAffected > 0;
             }
             catch (Exception ex)
             {
@@ -55,15 +56,14 @@ namespace negocio
         public int ejecutarScalar()
         {
 
-            int idart;
+            int ID;
             comando.Connection = conexion;
             try
             {
                 conexion.Open();
-                idart = (int)comando.ExecuteScalar();
+                ID = (int)comando.ExecuteScalar();
                 cerrarConexion();
-
-                return idart;
+                return ID;
             }
             catch (Exception ex)
             {
